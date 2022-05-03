@@ -74,7 +74,17 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-
+                        <div class="row mb-3">
+                            <label for="gender" class="col-md-4 col-form-label text-md-end">{{ __('Gender') }}</label><br>
+                                <div class="col-md-6" style="margin-top:10px">
+                                    <input type="radio" id="male" name="gender" value="1">
+                                    <label for="male">Male</label>
+                                    <input type="radio" id="female" name="gender" value="0">
+                                    <label for="female">Female</label>
+                                    <input type="radio" id="unknown" name="gender" value="2">
+                                    <label for="unknown">Unknown</label><br>
+                                </div>
+                        </div>
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
