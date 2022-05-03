@@ -4,6 +4,7 @@
         body{
             background-image: url("../img/wave.png");
             background-repeat: no-repeat;
+            background-size: 1535px 758px;
         }
         div.card-header{
             background-color: #85DCBA;
@@ -11,24 +12,27 @@
             text-align:center;
         }
         div.justify-content-center{
-            padding:0px 0px 0px 700px;
+            padding:0px 0px 0px 750px;
         }
         .adverting-apple{
             position:absolute;
             left:150px;
         }
-        #adver{
-            position:absolute;
-            width:150%;
-            height:150%;
+        .card{
+            box-shadow:0 10px 12px 0 rgba(0, 0, 0, 0.2), 0 10px 12px 0 rgba(0, 0, 0, 0.19);
         }
+        /* #adver{
+            position:absolute;
+            width:1535px;
+            height:226px;
+            left:-1px;
+            top:50px;
+        } */
     </style>
 </html>
 <body>
     @section('content')
-    <img class="wave" src=>
     <div class="container">
-        <img src="../picture/tube-train-passing-an-ad-poster-for-new-apple-iphone-xs-advertising-poster-in-the-london-underground-track-R48PE8.jpg" id="adver">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="adverting-apple">
