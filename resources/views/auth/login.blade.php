@@ -14,10 +14,10 @@
         div.justify-content-center{
             padding:0px 0px 0px 750px;
         }
-        .adverting-apple{
+        /* .adverting-apple{
             position:absolute;
             left:150px;
-        }
+        } */
         .card{
             box-shadow:0 10px 12px 0 rgba(0, 0, 0, 0.2), 0 10px 12px 0 rgba(0, 0, 0, 0.19);
         }

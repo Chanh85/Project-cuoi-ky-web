@@ -1,5 +1,19 @@
 @extends('layouts.app')
-
+<style>
+    body{
+            background-image: url("../img/wave.png");
+            background-repeat: no-repeat;
+            background-size: 1535px 758px;
+    }
+    .card{
+            box-shadow:0 10px 12px 0 rgba(0, 0, 0, 0.2), 0 10px 12px 0 rgba(0, 0, 0, 0.19);
+    }
+    div.card-header{
+            background-color: #85DCBA;
+            color:white;
+            text-align:center;
+    }
+</style>
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
