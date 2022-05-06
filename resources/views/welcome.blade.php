@@ -19,21 +19,54 @@
             <div class="container">
                 <div class="navbar">
                     <div class="logo">
-                        <a href="index.html"><img src="/frontend/images/logoASMD.png" width="125px"></a>
+                        <a href="/index.html"><img src="/frontend/images/logoASMD.png" width="125px"></a>
                     </div>
                     <nav>
                         <ul id="MenuItems">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="product.html">Products</a></li>
+                            <li><a href="/frontend/index.html">Home</a></li>
+                            <li><a href="/frontend/product.html">Products</a></li>
                             <li><a href="">About</a></li>
-                            <li><a href="/contactuss/contactus.html">Contact</a></li>
+                            <li><a href="/frontend/contactuss/contactus.html">Contact</a></li>
                             <li><a href="">Account</a></li>
                             
                         </ul>
                     </nav>
-                    <img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;">
+                    <a href="/frontend/cart.html"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;"></a>
                     <img src="/frontend/images/menu.png" class="menu-icon" onclick="menutoggle()">
                 </div>
+                
+                @guest
+                @if (Route::has('login'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                @endif
+
+                @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                @endif
+            @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }}
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            @endguest
+
                 <div class="row">
                     <div class="col-2">
                         <h1>Where is the smartphone<br> you want to choose ?</h1>
