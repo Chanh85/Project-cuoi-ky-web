@@ -2,7 +2,7 @@
 <html>
     <style>
         body{
-            background-image: url("../img/wave.png");
+            background-image: url("/img/wave.png");
             background-repeat: no-repeat;
             background-size: 1535px 758px;
         }
