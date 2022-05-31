@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,4 +19,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('product', function(){
+    return view('product');
+});
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+
+Route::get('cart', function(){
+    return view('cart');
+});
+
+Route::get('contactus', function(){
+    return view('contactus');
+});
+
