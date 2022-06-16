@@ -13,18 +13,17 @@
 
 </head>
 <body>
-    
             <div class="container">
                 <div class="navbar">
                     <div class="logo">
-                        <a href="/home"><img src="/frontend/images/logoASMD.png" width="125px"></a>
+                        <a href="home"><img src="/frontend/images/logoASMD.png" width="125px"></a>
                     </div>
                     <nav>
                         <ul id="MenuItems">
-                            <li><a href="/home">Home</a></li>
-                            <li><a href="product">Products</a></li>
+                            <li><a href="{{ url('/home') }}">Home</a></li>
+                            <li><a href="/product">Products</a></li>
                             <li><a href="">About</a></li>
-                            <li><a href="contactus">Contact</a></li>
+                            <li><a href="/contactus">Contact</a></li>
                             <li><a href="">Account</a></li>
                             @guest
                             @if (Route::has('login'))
@@ -60,25 +59,58 @@
                         </ul>
                     </nav>
                     <a href="cart"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;"></a>
-                    <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+                    <img src="/frontend/images/menu.png" class="menu-icon" onclick="menutoggle()">
                 </div>
             </div>
+<!--------single product details--------->
+    <div class="small-container single-product">
+        <div class="row_part2">
+             <div class="col-2">
+                 <img src="{{ asset('/uploads/productimg/'.$details->picture_1)}}" width="90%" id="ProductImg">
 
-    <div class="small-container" style="padding-left: 180px; padding-right: 180px;" >
-
-        <div class="row_part2 row2">
-            <h1>All Products</h1>
-            <select>
-                <option>Default Shorting</option>
-                <option>Shorting by price</option>
-                <option>Shorting by popularity</option>
-                <option>Shorting by rating</option>
-                <option>Shorting by sale</option>
-            </select>
+                 <div class="small-img-row">
+                     <div class="small-img-col">
+                        <img src="{{ asset('/uploads/productimg/'.$details->picture_1) }}" width="90%" class="small-img">
+                     </div>
+                     <div class="small-img-col">
+                        <img src="{{ asset('/uploads/productimg/'.$details->picture_2) }}" width="90%" class="small-img">
+                     </div>
+                     <div class="small-img-col">
+                        <img src="{{ asset('/uploads/productimg/'.$details->picture_3) }}" width="90%" class="small-img">
+                     </div>
+                     <div class="small-img-col">
+                        <img src="{{ asset('/uploads/productimg/'.$details->picture_4) }}" width="90%" class="small-img">
+                     </div>
+                 </div>
+             </div>
+             <div class="col-2">
+                 <h1>{{ $details->name }}</h1>
+                 <h4>{{ $details->price }}VND</h4>
+                 <input type="number" value="1">
+                 <a href="" class="btn">Add To Cart</a>
+                 <h3>Product Details <i class="fa fa-indent"></i></h3>
+                 <br>
+                 <p>{{ $details->description }}</p>
+             </div>
         </div>
-        <div class="row_part2" >
+    </div>
+
+<!----------title---------->
+    <div class="small-container">
+        <div class="row_part2 row2">
+            <h2>Related Products</h2>
+            <p>View more</p>
+        </div>
+    </div>
+
+
+
+
+<!----------product------------->
+    <div class="small-container">
+        <div class="row_part2">
             <div class="col-4">
-                <p><a href="product_details.html"><img src="/frontend/images/11-pro-plus-black-1.png"></a></p>
+                <img src="/frontend/images/11-pro-plus-black-1.png">
                 <h4>Xiaomi Redmi Note 11 Pro Plus 5G</h4>
                     <div class="rating">
                         <i class="fa fa-star"></i>
@@ -126,89 +158,7 @@
                 <p>$50.00</p>
             </div>
         </div>
-        <div class="row_part2">
-            <div class="col-4">
-                <img src="/frontend/images/vong-deo-tay-thong-minh-xiaomi-mi-band-6-11.png">
-                <h4>Mi-Band-6-11</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-            </div>
-            <div class="col-4">
-                <img src="/frontend/images/watch-4-classic.png">
-                <h4>Watch 4 Classic</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$20.00</p>
-            </div>
-            <div class="col-4">
-                <img src="/frontend/images/apple-watch-se-40mm-4g-1.png">
-                <h4>Apple Watch Se</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>$30.00</p>
-            </div>
-        </div>
-        <div class="row_part2">
-            <div class="col-4">
-                <img src="/frontend/images/tab_s8_ultra.png">
-                <h4>Tab S8</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-            </div>
-            <div class="col-4">
-                <img src="/frontend/images/xiaomi-pad-5-white-2600x600.png">
-                <h4>Xiaomi Pad 5</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$20.00</p>
-            </div>
-            <div class="col-4">
-                <img src="/frontend/images/apple-ipad-pro-12-9-2020-wifi-128-gb-1.png">
-                <h4>Ipad pro 12 2020</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>$30.00</p>
-            </div>
-        </div>
-        <div class="page-btn">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>&#8594;</span>
-        </div>
+
     </div>
 
 
@@ -225,7 +175,7 @@
                     </div>
                 </div>
                 <div class="footer-col-2">
-                    <a href="index.html"><img src="/frontend/images/logoASM.png" width="125px"></a>
+                    <img src="/frontend/images/logo-white.png">
                     <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Smartphone Accessible to the Many.</p>
                 </div>
                 <div class="footer-col-3">

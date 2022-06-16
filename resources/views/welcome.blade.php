@@ -23,7 +23,7 @@
                     </div>
                     <nav>
                         <ul id="MenuItems">
-                            <li><a href="/home">Home</a></li>
+                            <li><a href="{{ url('/home') }}">Home</a></li>
                             <li><a href="/product">Products</a></li>
                             <li><a href="">About</a></li>
                             <li><a href="/contactus">Contact</a></li>

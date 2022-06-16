@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ProductController;
+use App\Models\Product;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,9 +22,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('product', function(){
-    return view('product');
-});
+Route::resource('product', ProductController::class);
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
 Route::get('cart', function(){
@@ -30,5 +32,10 @@ Route::get('cart', function(){
 
 Route::get('contactus', function(){
     return view('contactus');
+});
+
+Route::get('product_details/{product?}', function($product = null){
+    $product = Product::findOrFail($product);
+    return view('product.product_details',['details' => $product]);
 });
 
