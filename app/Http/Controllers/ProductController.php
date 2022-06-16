@@ -56,42 +56,13 @@ class ProductController extends Controller
         
         $product = new Product;
         $product->name = $request->name; 
+        $product->picture_1 = $request->picture1;
+        $product->picture_2 = $request->picture2;
+        $product->picture_3 = $request->picture3;
+        $product->picture_4 = $request->picture4;
         $product->quantity = $request->quantity;
         $product->description = $request->description;
         $product->price = $request->price;
-        
-        if($request->hasFile('picture1')){
-            $file = $request->file('picture1');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('uploads/productimg/',$filename);
-            $product->picture_1 = $filename;
-        }
-        
-        if($request->hasFile('picture2')){
-            $file = $request->file('picture2');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('uploads/productimg/',$filename);
-            $product->picture_2 = $filename;
-        }
-
-        if($request->hasFile('picture3')){
-            $file = $request->file('picture3');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('uploads/productimg/',$filename);
-            $product->picture_3 = $filename;
-        }
-
-        if($request->hasFile('picture4')){
-            $file = $request->file('picture4');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('uploads/productimg/',$filename);
-            $product->picture_4 = $filename;
-        }
-        
         $product->save(); 
         
         return redirect()->route('product.create');

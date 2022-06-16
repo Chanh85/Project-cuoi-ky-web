@@ -1,4 +1,4 @@
-<form action="{{ route("product.store") }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route("product.store") }}" method="POST" >
     @csrf
     <div>
         <label for="name">Ten san pham:</label>

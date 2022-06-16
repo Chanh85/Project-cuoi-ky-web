@@ -66,20 +66,20 @@
     <div class="small-container single-product">
         <div class="row_part2">
              <div class="col-2">
-                 <img src="{{ asset('/uploads/productimg/'.$details->picture_1)}}" width="90%" id="ProductImg">
+                 <img src="{{ asset('/frontend/images/'.$details->picture_1)}}" width="90%" id="ProductImg">
 
                  <div class="small-img-row">
                      <div class="small-img-col">
-                        <img src="{{ asset('/uploads/productimg/'.$details->picture_1) }}" width="90%" class="small-img">
+                        <img src="{{ asset('/frontend/images/'.$details->picture_1) }}" width="90%" class="small-img">
                      </div>
                      <div class="small-img-col">
-                        <img src="{{ asset('/uploads/productimg/'.$details->picture_2) }}" width="90%" class="small-img">
+                        <img src="{{ asset('/frontend/images/'.$details->picture_2) }}" width="90%" class="small-img">
                      </div>
                      <div class="small-img-col">
-                        <img src="{{ asset('/uploads/productimg/'.$details->picture_3) }}" width="90%" class="small-img">
+                        <img src="{{ asset('/frontend/images/'.$details->picture_3) }}" width="90%" class="small-img">
                      </div>
                      <div class="small-img-col">
-                        <img src="{{ asset('/uploads/productimg/'.$details->picture_4) }}" width="90%" class="small-img">
+                        <img src="{{ asset('/frontend/images/'.$details->picture_4) }}" width="90%" class="small-img">
                      </div>
                  </div>
              </div>

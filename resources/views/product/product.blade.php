@@ -80,7 +80,7 @@
             @foreach ($products as $product)
             
             <div class="col-4">
-                <p><a href="{{ 'product_details'.'/'.$product->id }}"><img src="{{ asset('/uploads/productimg/'.$product->picture_1) }}"></a></p>
+                <p><a href="{{ 'product_details'.'/'.$product->id }}"><img src="{{ asset('/frontend/images/'.$product->picture_1) }}"></a></p>
                 <h4>{{ $product->name }}</h4>
                 <p>{{ $product->price }}VND</p>
             </div> 
