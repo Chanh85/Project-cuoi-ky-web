@@ -39,3 +39,7 @@ Route::get('product_details/{product?}', function($product = null){
     return view('product.product_details',['details' => $product]);
 });
 
+Route::get('about', function(){
+    return view('about');
+});
+
