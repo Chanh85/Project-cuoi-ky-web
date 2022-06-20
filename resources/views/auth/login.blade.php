@@ -1,34 +1,3 @@
-@extends('layouts.app')
-<html>
-    <style>
-        body{
-            background-image: url("/img/wave.png");
-            background-repeat: no-repeat;
-            background-size: 1535px 758px;
-        }
-        div.card-header{
-            background-color: #85DCBA;
-            color:white;
-            text-align:center;
-        }
-        div.justify-content-center{
-            padding:0px 0px 0px 750px;
-        }
-        /* .adverting-apple{
-            position:absolute;
-            left:150px;
-        } */
-        .card{
-            box-shadow:0 10px 12px 0 rgba(0, 0, 0, 0.2), 0 10px 12px 0 rgba(0, 0, 0, 0.19);
-        }
-        /* #adver{
-            position:absolute;
-            width:1535px;
-            height:226px;
-            left:-1px;
-            top:50px;
-        } */
-    </style>
 </html>
 <body>
     @section('content')
@@ -42,7 +11,6 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
-
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
