@@ -94,140 +94,14 @@
             </select>
         </div>
         <div class="row_part2" >
+            @foreach($products as $product)
             <div class="col-4">
-                <p><a href="product_details.html"><img src="/frontend/images/11-pro-plus-black-1.png"></a></p>
-                <h4>Xiaomi Redmi Note 11 Pro Plus 5G</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                <p>$50.00</p>
+                <p><a href='{{ 'product_details/'.$product->id }}'><img src="{{ asset('/frontend/images/'.$product->picture_1)}}"></a></p>
+                <h4>{{ $product->name }}</h4>
+                <p>{{ $product->price }}VND</p>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
-            <div class="col-4">
-                <img src="/frontend/images/yellow_final_2.png">
-                <h4>Samsung Galaxy Note 20 Ultra 5G</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
-            <div class="col-4">
-                <img src="/frontend/images/iphone_13-_pro-4_2.png">
-                <h4>Iphone 13 Pro Max</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
-            <div class="col-4">
-                <img src="/frontend/images/800x800_flip_3_cream.png">
-                <h4>Z-Flip 3x</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
-        </div>
-        <div class="row_part2">
-            <div class="col-4">
-                <img src="/frontend/images/vong-deo-tay-thong-minh-xiaomi-mi-band-6-11.png">
-                <h4>Mi-Band-6-11</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
-            <div class="col-4">
-                <img src="/frontend/images/watch-4-classic.png">
-                <h4>Watch 4 Classic</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$20.00</p>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
-            <div class="col-4">
-                <img src="/frontend/images/apple-watch-se-40mm-4g-1.png">
-                <h4>Apple Watch Se</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>$30.00</p>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
-        </div>
-        <div class="row_part2">
-            <div class="col-4">
-                <img src="/frontend/images/tab_s8_ultra.png">
-                <h4>Tab S8</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
-            <div class="col-4">
-                <img src="/frontend/images/xiaomi-pad-5-white-2600x600.png">
-                <h4>Xiaomi Pad 5</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$20.00</p>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
-            <div class="col-4">
-                <img src="/frontend/images/apple-ipad-pro-12-9-2020-wifi-128-gb-1.png">
-                <h4>Ipad pro 12 2020</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>$30.00</p>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
+            @endforeach
         </div>
         <div class="page-btn">
             <span>1</span>
