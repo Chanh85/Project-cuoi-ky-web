@@ -87,7 +87,7 @@
                  <h1>{{ $details->name }}</h1>
                  <h4>{{ $details->price }}VND</h4>
                  <input type="number" value="1">
-                 <a href="" class="btn">Add To Cart</a>
+                 <a href="/cart" class="btn">Add To Cart</a>
                  <h3>Product Details <i class="fa fa-indent"></i></h3>
                  <br>
                  <p>{{ $details->description }}</p>

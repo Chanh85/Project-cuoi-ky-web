@@ -99,7 +99,7 @@
                 <p><a href='{{ 'product_details/'.$product->id }}'><img src="{{ asset('/frontend/images/'.$product->picture_1)}}"></a></p>
                 <h4>{{ $product->name }}</h4>
                 <p>{{ $product->price }}VND</p>
-                <a href="/cart"><i class='bx bx-shopping-bag add-cart'></i>gi</a>
+
             </div>
             @endforeach
         </div>
