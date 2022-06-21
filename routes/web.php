@@ -16,9 +16,7 @@ use App\Models\Product;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\AdminController::class, 'index'])->middleware('role:admin');
 
 Auth::routes();
 
@@ -44,4 +42,5 @@ Route::get('about', function(){
 });
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware(['auth','role:admin']);
+Route::get('/admin/create', [App\Http\Controllers\AdminController::class, 'create'])->middleware(['auth','role:admin']);
 

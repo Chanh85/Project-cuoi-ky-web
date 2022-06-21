@@ -16,10 +16,14 @@ class Rolemiddleware
      */
     public function handle(Request $request, Closure $next, $role)
     {
-        if(!Auth::user() || Auth::user()->role->name != $role)
+        if(!Auth::user())
         {
-            return redirect()->route('login');
+            return redirect('/home');
             //return abort('Khong duoc truy cap', 503);
+        }
+        else if(Auth::user()->role->name != $role)
+        {
+            return redirect('/home');
         }
         return $next($request);
     }
