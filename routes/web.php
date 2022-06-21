@@ -41,6 +41,5 @@ Route::get('about', function(){
     return view('about');
 });
 
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware(['auth','role:admin']);
-Route::get('/admin/create', [App\Http\Controllers\AdminController::class, 'create'])->middleware(['auth','role:admin']);
+Route::get('createP', [App\Http\Controllers\AdminController::class, 'create'])->middleware(['auth','role:admin']);
 

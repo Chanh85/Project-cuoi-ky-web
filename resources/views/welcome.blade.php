@@ -92,7 +92,7 @@
                         <h1>Where is the smartphone<br> you want to choose ?</h1>
                         <p>Give yourself the coolest smartphone<br>you've ever known.</p>
                     </div>
-                    <a href="" class="btn">Explore Now &#8594;</a>
+                    <a href="/product" class="btn">Explore Now &#8594;</a>
                 </div>
             </div>
         </div>

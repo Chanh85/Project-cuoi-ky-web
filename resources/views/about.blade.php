@@ -39,6 +39,7 @@
         }
         #about-us h2{
             margin-bottom: 25px;
+            margin-left: 10px;
         }
         .row{
             margin-left:423px;
@@ -47,6 +48,10 @@
         body{
             background-image: url(frontend/TanVuong/images/background-aboutus.jpg);
             background-size: 1533px 760px;
+        }
+        .container-2{
+            margin-top:119px;
+            padding-right:439px;
         }
     </style>
 </head>
@@ -116,7 +121,7 @@
                 </div>
                 <div class="col-sm-5">
                     <div class="img-wrap">
-                        <img src="frontend/TanVuong/images/vuong.jpg">
+                        <img src="frontend/TanVuong/images/vuong.jpg" style="width:200px;height:200px;">
                     </div>
                 </div>
                 <div class="col-sm-7">
@@ -131,7 +136,7 @@
                 </div>
                 <div class="col-sm-5">
                     <div class="img-wrap">
-                        <img src="frontend/TanVuong/images/avt.jpg">
+                        <img src="frontend/TanVuong/images/avt.jpg" style="width:200px;height:200px;">
                     </div>
                 </div>
                 <div class="col-sm-7">
@@ -146,7 +151,22 @@
                 </div>
                 <div class="col-sm-5">
                     <div class="img-wrap">
-                        <img src="frontend/TanVuong/images/avt.jpg">
+                        <img src="frontend/TanVuong/images/avt.jpg" style="width:200px;height:200px;">
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <h2 class="Vuong" style="text-align:center;">Nguyễn Nhất Duy</h2>
+                    <ul><h3>Information</h3>
+                        <li>Experient: 3 years at TDTU university </li>
+                        <li>Favourite language:Python,java,HTML,CSS</li>
+                        <li>Age:20</li>
+                        <li>Status:Single</li>
+                        <li>School:TDTU</li>
+                    </ul>
+                </div>
+                <div class="col-sm-5">
+                    <div class="img-wrap">
+                        <img src="frontend/TanVuong/images/avt.jpg" style="width:200px;height:200px;">
                     </div>
                 </div>
             </div>
