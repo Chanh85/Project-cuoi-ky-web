@@ -140,7 +140,7 @@
                     </div>
                 </div>
                 <div class="col-sm-7">
-                    <h2 class="Vuong" style="text-align:center;">Nguyễn Chí Anh</h2>
+                    <h2 class="Vuong" style="text-align:center;">Nguyen Chi Anh</h2>
                     <ul><h3>Information</h3>
                         <li>Experient:</li>
                         <li>Favourite language:</li>

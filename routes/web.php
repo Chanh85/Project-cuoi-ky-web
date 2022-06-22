@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProductController;
@@ -24,9 +25,8 @@ Route::resource('product', ProductController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
-Route::get('cart', function(){
-    return view('cart');
-});
+Route::resource('cart', CartController::class);
+// Route::get('cart/{user?}', [App\Http\Controllers\CartController::class], 'index');
 
 Route::get('contactus', function(){
     return view('contactus');
@@ -41,5 +41,5 @@ Route::get('about', function(){
     return view('about');
 });
 
-Route::get('createP', [App\Http\Controllers\AdminController::class, 'create'])->middleware(['auth','role:admin']);
+Route::get('createP', [App\Http\Controllers\AdminController::class, 'create'])->middleware(['auth','role:admin'])->name('product.create');
 

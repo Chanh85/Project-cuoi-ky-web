@@ -181,11 +181,12 @@
             <div class="total">
                 <div class="total-title">Total</div>
                 <div class="total-price">$0</div>
+                
             </div>
             {{-- Buy button --}}
             <button type="button" class="btn-buy">Buy now</button>
             {{-- Cart close --}}
-            <i class='bx bx-x' id="close-cart" ></i>
+           <a href="{{ url()->previous() }}"><i class='bx bx-x' id="close-cart" ></i></a>
         </div>
 </body>
 </html>

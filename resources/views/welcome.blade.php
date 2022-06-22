@@ -84,13 +84,14 @@
                         @endguest
                         </div>
                     </nav>
-                    <a href="/cart"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;padding-left:10px;padding-right:0px;" id="cart-icon"></a>
+                    <a href="{{ 'cart' }}"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;padding-left:10px;padding-right:0px;" id="cart-icon"></a>
                     <img src="/frontend/images/menu.png" class="menu-icon"  onclick="menutoggle()">
                 </div>
                 <div class="row">
                     <div class="col-2">
                         <h1>Where is the smartphone<br> you want to choose ?</h1>
                         <p>Give yourself the coolest smartphone<br>you've ever known.</p>
+                        {{-- <p>{{ Auth::user()->cart->user_id }}</p> --}}
                     </div>
                     <a href="/product" class="btn">Explore Now &#8594;</a>
                 </div>
@@ -124,6 +125,7 @@
                 <p><a href='{{ 'product_details/'.$product->id }}'><img src="{{ asset('/frontend/images/'.$product->picture_1)}}"></a></p>
                 <h4>{{ $product->name }}</h4>
                 <p>{{ $product->price }}VND</p>
+                <p>Kho: {{ $product->quantity }} </p>
             </div>
             @endforeach
         </div>

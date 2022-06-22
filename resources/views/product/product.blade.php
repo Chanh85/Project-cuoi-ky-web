@@ -98,7 +98,8 @@
             <div class="col-4">
                 <p><a href='{{ 'product_details/'.$product->id }}'><img src="{{ asset('/frontend/images/'.$product->picture_1)}}"></a></p>
                 <h4>{{ $product->name }}</h4>
-                <p>{{ $product->price }}VND</p>
+                <p>{{ $product->price }} VND</p>
+                <p>Kho: {{ $product->quantity }}</p>
             </div>
             @endforeach
         </div>

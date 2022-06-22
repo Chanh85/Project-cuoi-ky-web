@@ -16,11 +16,11 @@
             <div class="container">
                 <div class="navbar">
                     <div class="logo">
-                        <a href="home"><img src="/frontend/images/logoASMD.png" width="125px"></a>
+                        <a href="/home"><img src="/frontend/images/logoASMD.png" width="125px"></a>
                     </div>
                     <nav>
                         <ul id="MenuItems">
-                            <li><a href="{{ url('/home') }}">Home</a></li>
+                            <li><a href="/home">Home</a></li>
                             <li><a href="/product">Products</a></li>
                             <li><a href="">About</a></li>
                             <li><a href="/contactus">Contact</a></li>
@@ -58,7 +58,7 @@
                         @endguest
                         </ul>
                     </nav>
-                    <a href="cart"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;"></a>
+                    <a href="/cart"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;"></a>
                     <img src="/frontend/images/menu.png" class="menu-icon" onclick="menutoggle()">
                 </div>
             </div>
@@ -85,12 +85,13 @@
              </div>
              <div class="col-2">
                  <h1>{{ $details->name }}</h1>
-                 <h4>{{ $details->price }}VND</h4>
+                 <h4>{{ $details->price }} VND</h4>
                  <input type="number" value="1">
                  <a href="/cart" class="btn">Add To Cart</a>
                  <h3>Product Details <i class="fa fa-indent"></i></h3>
                  <br>
                  <p>{{ $details->description }}</p>
+                 <p>Kho: {{ $details->quantity }} </p>
              </div>
         </div>
     </div>
