@@ -19,7 +19,7 @@ form{
     background: white;
     margin-left: 20%;
     margin-top: 90px;
-    padding: 40px;
+    padding:20px;
     border-radius: 3px;
     box-sizing: border-box;
 }
@@ -83,3 +83,7 @@ input[type="submit"]{
 #success{
     color: #28A745;
 }
+#overlay{
+    position: absolute;
+}
+

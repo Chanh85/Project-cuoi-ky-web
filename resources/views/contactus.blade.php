@@ -13,7 +13,7 @@
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <a href="/home"><img src="/frontend/images/logoASMD.png" width="125px"></a>
+                <a href="/home"><img src="/frontend/images/logoASMD.png" width="60px"></a>
             </div>
             <nav>
                 <ul id="MenuItems">
@@ -61,7 +61,7 @@
     </div>
 
     <div id="overlay">
-        <form onsubmit="event.preventDefault(); validateForm()">
+        <form onsubmit="event.preventDefault(); validateForm()" id="froms-contact">
             <h1>Contact Us</h1>
 
             <label for="name">Name:</label>
@@ -78,7 +78,7 @@
 
             <div class="center">
                 <input type ="submit" value="Send Message">
-                <p id="success"></p>            
+                <p id="success"></p>
             </div>
         </form>
     </div>

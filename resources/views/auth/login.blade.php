@@ -41,7 +41,7 @@
 <body>
     <div class="container">
         <div class="forms">
-            <div class="form login">
+            <div class="form login form-login-enty">
                 <span class="title">Login</span>
 
                 <form method="POST" action="{{ route('login') }}">
@@ -169,8 +169,6 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
 @endsection
 =======
 @endsection --}}
->>>>>>> 76382ee040c839a455e8512d80a80034c3baa4c6
