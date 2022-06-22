@@ -78,7 +78,7 @@
 
             <div class="center">
                 <input type ="submit" value="Send Message">
-                <p id="success"></p>            
+                <p id="success"></p>
             </div>
         </form>
     </div>

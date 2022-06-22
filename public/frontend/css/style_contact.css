@@ -4,6 +4,7 @@
 
 body{
     background-image: url("image/contact_background.jpg");
+    background-repeat: no-repeat;
     margin: 0;
 }
 
@@ -18,7 +19,7 @@ form{
     width: 90%;
     background: white;
     margin-left: 20%;
-    margin-top: 90px;
+    margin-top: 20px;
     padding: 40px;
     border-radius: 3px;
     box-sizing: border-box;
