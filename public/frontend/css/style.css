@@ -454,3 +454,101 @@ td:last-child{
 th:last-child{
     text-align: right;
 }
+
+/* --------Account----------  */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #eeeeee;
+}
+
+form{
+    border:1px solid rgb(192, 187, 187);
+    border-radius: 12px;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 24px;
+    background-color: white;
+    
+}
+
+.form-control{
+    width: 100%;
+    height: 32px;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    padding: 4px 8px;
+    outline: none;
+}
+
+.form-control:hover{
+    background-color: rgba(243, 116, 74, 0.518);
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+label{
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group div label{
+    display: inline;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: white;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+button[type="submit"]{
+    background-color: #dd382c;
+}
+button[type="submit"]:hover{
+    background-color: #a71414;
+}
+
+
+.formcreate{
+    border:1px solid rgb(192, 187, 187);
+    border-radius: 12px;
+    width: 40%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 24px;
+    background-color: white;
+    
+}
+
+.input-cre input{
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+}
+.input-cre input:is(:focus, :valid){
+    border-bottom-color: #ff523b;
+}
+
+.formcreate label{
+    font-size: 20px;
+}
+
+.h1 .title::before{
+    width: 30px;
+    background-color: #ff523b;
+    border-radius: 25px;
+}
