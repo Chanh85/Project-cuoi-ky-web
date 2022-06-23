@@ -50,7 +50,7 @@
                             <span><a href="/product">Products</a></span>
                             <span><a href="/about">About</a></span>
                             <span><a href="/contactus">Contact</a></span>
-                            <span><a href="">Account</a></span>
+                            <span><a href="/account">Account</a></span>
                             @guest
                             @if (Route::has('login'))
                                 <span class="nav-item">
