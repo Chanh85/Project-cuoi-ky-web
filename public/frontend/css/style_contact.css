@@ -19,8 +19,13 @@ form{
     width: 90%;
     background: white;
     margin-left: 20%;
+<<<<<<< HEAD
     margin-top: 20px;
     padding: 40px;
+=======
+    margin-top: 90px;
+    padding:20px;
+>>>>>>> eb01d70be72ee575f5c43afc2e6f1def19254755
     border-radius: 3px;
     box-sizing: border-box;
 }
@@ -84,3 +89,7 @@ input[type="submit"]{
 #success{
     color: #28A745;
 }
+#overlay{
+    position: absolute;
+}
+
