@@ -41,25 +41,19 @@ class CartController extends Controller
         //
         $product_id = $request->input('product_id');
         $product_qty = $request->input('product_qty');
-        
+        if(Auth::check())
+        {
             $prod_check = Product::where('id', $product_id)->first();
             if($prod_check)
             {
                 if(Cart::where('product_id',$product_id)->where('user_id',Auth::id())->exists())
                 {
+                    $cartItem = Cart::where('product_id',$product_id)->where('user_id', Auth::id())->first();
+                    $cartItem->quantity = $product_qty;
+                    $cartItem->update();
                     return response()->json(['status' => $prod_check->name." đã có sẵn trong giỏ hàng, vui lòng vào giỏ hàng kiểm tra!"]);
                 }
                 else{
-                    // if(Cart::where('user_id',Auth::id())->exists())
-                    // {
-                    //     $cartItem = Cart::where('user_id',Auth::id())->first();
-                    //     $cartItem->product_id = $product_id;
-                    //     $cartItem->quantity = $product_qty;
-                    //     $cartItem->save();
-                    //     return response()->json(['status' => $prod_check->name." da duoc them vao gio hang!"]);
-                    // }
-                    
-                    
                         $cartItem = new Cart;
                         $cartItem->user_id = Auth::id();
                         $cartItem->product_id = $product_id;
@@ -71,6 +65,11 @@ class CartController extends Controller
                 }
                 
             }
+        }
+        else
+        {
+            return response()->json(['status' => "Đăng nhập để tiếp tục"]);
+        }
        
     }
 
@@ -128,7 +127,7 @@ class CartController extends Controller
         {
             $cartItem = Cart::where('product_id',$prod_id)->where('user_id', Auth::id())->first();
             $cartItem->delete();
-            return response()->json(['status' => 'Đã xóa sản phẩm '.$prod_check->name]);
+            return response()->json(['status' => 'Đã xóa sản phẩm ']);
         }
    }
 

@@ -21,11 +21,11 @@ Route::get('/', [App\Http\Controllers\AdminController::class, 'index'])->middlew
 
 Auth::routes();
 
-Route::resource('product', ProductController::class);
+Route::resource('product', ProductController::class)->only('index','store');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
-Route::resource('cart', CartController::class)->middleware('auth');
+Route::resource('cart', CartController::class)->only('index','store','show');
 // Route::get('cart/{user?}', [App\Http\Controllers\CartController::class], 'index');
 
 Route::get('contactus', function(){
@@ -44,3 +44,5 @@ Route::get('about', function(){
 Route::get('createP', [App\Http\Controllers\AdminController::class, 'create'])->middleware(['auth','role:admin'])->name('product.create');
 Route::post('delete-cart-item',[App\Http\Controllers\CartController::class, 'deleteProduct']);
 Route::post('updateCart',[App\Http\Controllers\CartController::class, 'updateProduct']);
+Route::get('checkout',[App\Http\Controllers\CheckoutController::class, 'index']);
+Route::post('place-order',[App\Http\Controllers\CheckoutController::class, 'placeorder']);

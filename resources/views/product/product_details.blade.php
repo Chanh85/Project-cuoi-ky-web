@@ -93,15 +93,24 @@
                  <h4>{{ $details->price }} VND</h4>
                  <div class="input-group text-center mb-3" style="width:130px">
                     <input type="hidden" value="{{ $details->id }}" class="prod_id">
+                    @if($details->quantity > 0)
                     <button class="decrement-btn " >-</button>
                     <input type="text" name="quanity" id="quantity" class="form-control text-center qty-input" value="1">
                     <button class="input-group-text increment-btn " >+</button>
+                    <p><br>In stock</p>
+                    <button type="button" class="btn addtoCartBtn">Add to Cart</button>
+                    @else 
+                    <p><br>Out of stock</p>
+                    @endif
                  </div>
-                 <button type="button" class="btn addtoCartBtn">Add to Cart</button>
+                 <br>
                  <h3>Product Details <i class="fa fa-indent"></i></h3>
                  <br>
                  <p>{{ $details->description }}</p>
                  <p>Kho: {{ $details->quantity }} </p>
+                
+                  
+                   
              </div>
         </div>
     </div>

@@ -133,7 +133,12 @@
                 <h4>{{ $product->name }}</h4>
                 <p>{{ $product->price }}VND</p>
                 <p>Kho: {{ $product->quantity }} </p>
-            </div>
+                @if($product->quantity > 0)
+                <p>In stock</p>
+            @else
+                <p>Out of stock</p> 
+            @endif
+            </div>  
             @endforeach
         </div>
     </div>
@@ -282,4 +287,4 @@
     </div>
 </body>
 </html>
-gi
+

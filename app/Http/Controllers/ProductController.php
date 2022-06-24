@@ -14,26 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        // $details = new Product;
-        // $details->name = 'Xiaomi Redmi Note 11 Pro Plus 5G';
-        // $details->picture_1 = '/frontend/images/11-pro-plus-black-1.png';
-        // $details->picture_2 = '/frontend/images/11-pro-plus-black-2.png';
-        // $details->picture_3 = '/frontend/images/11-pro-plus-black-3.png';
-        // $details->picture_4 = '/frontend/images/11-pro-plus-black-4.png';
-        // $details->price = 50.00;
-        // $details->quantity = 1;
-        // $details->description = 'Xiaomi Redmi Note 11 Pro Plus – Cấu hình mạnh mẽ, camera ấn tượng
-        // Redmi Note 11 Pro Plus chính là mẫu smartphone tầm trung tiếp theo được Xiaomi cho ra mắt với giá hấp dẫn cùng với thiết kế mới tinh tế, cấu hình mạnh mẽ và cụm camera chất lượng cao cho trải nghiệm nhiếp ảnh đầy hứa hẹn.
-
-        // Thiết kế phẳng, vuông vắn hơn với cụm camera tinh tế, nhiều màu sắc độc đáo
-        // Điện thoại Redmi Note 11 Pro+ có thiết kế thanh lịch và vuông vắn hơn, mặt trước và sau được vát phẳng hơn mang đến kiểu dáng hiện đại, hợp xu hướng. Bốn góc của smartphone vẫn được bo cong để hài hòa với tổng thể, mềm mại cũng như cầm nắm thoải mái.';
-
-        // $details->save();
-
-        // $details->save();
         $products = Product::all();
         return view('product.product',['products' => $products]);
-
     }
 
    

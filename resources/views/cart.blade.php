@@ -183,6 +183,7 @@
                 <a href="{{ url('product_details/'.$items->product_id) }}"><img src="{{ asset('/frontend/images/'.$items->product->picture_1)}}" class="cart-img"></a>
                 <div class="detail-box">
                     <input type="hidden" value="{{ $items->product_id }}" class="prod_id">
+                    @if($items->product->quantity >= $items->quantity)
                     <div class="cart-product-title">{{ $items->product->name }}</div>
                     <div class="cart-price">{{ $items->product->price }} VND</div>
                     <div class="input-group text-center mb-3" style="width:130px">
@@ -190,6 +191,12 @@
                         <input type="text" name="quanity" id="quantity" class="form-control text-center qty-input" value="{{ $items->quantity }}">
                         <button class="input-group-text increment-btn changeQuantity" >+</button>
                     </div>
+                    @php
+                    $total += $items->product->price * $items->quantity ;
+                    @endphp
+                    @else
+                        <h3>Hết hàng</h3>
+                    @endif
                 </div>
                 <button class="btn deleteCartItem"><i class='bx bxs-trash-alt cart-remove'></i></button>
             </div>
@@ -197,10 +204,6 @@
        
         {{-- Cart close --}}
        <a href="{{ url('/') }}"><i class='bx bx-x' id="close-cart" ></i></a> 
-
-        @php
-            $total += $items->product->price * $items->quantity ;
-        @endphp
        @endforeach
        {{-- Toltal --}}
        <div class="total">
@@ -208,7 +211,7 @@
             <div class="total-price"> {{ $total }} VND</div>
         </div>
         {{-- Buy button --}}
-        <button type="button" class="btn-buy" style="display: inline-block; margin-left: 40%;">Buy now</button>
+        <a href="{{ url('checkout') }}"><button type="button" class="btn-buy" style="display: inline-block; margin-left: 40%;">Buy now</button></a>
     </div>
     
     
