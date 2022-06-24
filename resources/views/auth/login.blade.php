@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../frontend/css/style_login.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="css/style_login.css">
     <script src="../frontend/js/scripts.js"></script>
 
     <meta charset="utf-8">
@@ -35,159 +36,12 @@
             border-radius:5px;
             cursor:pointer;
         }
-                /* Login Form */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        body{
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url(../images/Background_Login.jpg);
-            background-repeat: no-repeat;
-            background-color: black;
-            background-size: 100%;
-        }
-
-        .container{
-            position: relative;
-            max-width: 500px;
-            width: 100%;
-            background: #fff;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .container .form{
-            padding: 30px
-        }
-
-        .container .forms{
-            display: flex;
-            align-items: center;
-            width: 200%;
-        }
-
-        .container .form{
-            width: 50%;
-            padding: 30px;
-        }
-
-        .container .form .title{
-            position: relative;
-            font-size: 27px;
-            font-weight: 600;
-        }
-
-        .form .title::before{
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 3px;
-            width: 30px;
-            background-color: #ff523b;
-            border-radius: 25px;
-        }
-
-        .form .input-field{
-            margin-top: 30px;
-            position: relative;
-            height: 50px;
-            width: 100%;
-        }
-
-
-        .input-field input{
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            padding: 0 35px;
-            border: none;
-            outline: none;
-            font-size: 16px;
-            border-bottom: 2px solid #ccc;
-            border-top: 2px solid transparent;
-        }
-
-        .input-field input:is(:focus, :valid){
-            border-bottom-color: #ff523b;
-        }
-
-        .input-field i{
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #999;
-            font-size: 23px;
-        }
-
-        .input-field input:is(:focus, :valid) ~ i{
-            color: #ff523b;
-        }
-
-        .input-field i.icon{
-            left: 0;
-        }
-        .input-field i.showHidePw{
-            right: 0;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .form .checkbox-text{
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .checkbox-text .checkbox-content{
-            display: flex;
-            align-items: center;
-        }
-
-        .checkbox-content input{
-            margin: 0 8px -2px 4px;
-            accent-color: #ff523b;
-        }
-
-        .form a.text{
-            color: #4070f4;
-            font-size: 14px;
-        }
-
-        .form a{
-            color: #ff523b;
-            text-decoration: none;
-        }
-        .form a:hover{
-            text-decoration: underline;
-        }
-
-        .form .button{
-            margin-top: 35px;
-        }
-
-        .form .button input{
-            border: none;
-            color: #fff;
-            font-size: 17px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            border-radius: 6px;
-            background-color: #ff523b;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="forms">
-            <div class="form login form-login-enty">
+            <div class="form login">
                 <span class="title">Login</span>
 
                 <form method="POST" action="{{ route('login') }}">
@@ -315,6 +169,8 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 @endsection
 =======
 @endsection --}}
+>>>>>>> 76382ee040c839a455e8512d80a80034c3baa4c6

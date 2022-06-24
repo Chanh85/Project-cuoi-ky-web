@@ -25,7 +25,7 @@ Route::resource('product', ProductController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
-Route::resource('cart', CartController::class);
+Route::resource('cart', CartController::class)->middleware('auth');
 // Route::get('cart/{user?}', [App\Http\Controllers\CartController::class], 'index');
 
 Route::get('contactus', function(){
@@ -42,15 +42,5 @@ Route::get('about', function(){
 });
 
 Route::get('createP', [App\Http\Controllers\AdminController::class, 'create'])->middleware(['auth','role:admin'])->name('product.create');
-
-Route::get('admin', function(){
-    return view('admin');
-});
-
-Route::get('account', function(){
-    return view('account');
-});
-
-
-
-
+Route::post('delete-cart-item',[App\Http\Controllers\CartController::class, 'deleteProduct']);
+Route::post('updateCart',[App\Http\Controllers\CartController::class, 'updateProduct']);

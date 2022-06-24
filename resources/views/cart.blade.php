@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>All Products - Smartphone Store</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +13,8 @@
     <script src="/frontend/js/scripts.js"></script>
     <link rel="stylesheet" href="/frontend/css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{{ asset('frontend/js/custom.js') }}"></script>
     <style>
          .add-cart{
             position:absolute;
@@ -121,11 +125,11 @@
             </div>
             <nav>
                 <ul id="MenuItems">
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="product">Products</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="contactus">Contact</a></li>
-                    <li><a href="about">Account</a></li>
+                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('product') }}">Products</a></li>
+                    <li><a href="{{ url('about') }}">About</a></li>
+                    <li><a href="{{ url('contactus') }}">Contact</a></li>
+                    <li><a href="">Account</a></li>
                     @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
@@ -159,34 +163,55 @@
                 @endguest
                 </ul>
             </nav>
-            <a href="cart"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;"></a>
+            @if(Auth::check())
+                <a href="{{ url('cart/'.Auth::user()->id) }}"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;padding-left:10px;padding-right:0px;" id="cart-icon"></a>
+            @endif
             <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
         </div>
     </div>
 
+    
+    
     <div class="cart">
-            <h2 class="cart-title">Your Cart</h2>
-            <div class="cart-content">
-                <div class="cart-box">
-                    <img src="/frontend/Tanvuong/images/11-pro-plus-black-1.png" class="cart-img">
-                    <div class="detail-box">
-                        <div class="cart-product-title">Xiaomi Redmi Note 11 Pro Plus 5G</div>
-                        <div class="cart-price">$50.00</div>
-                        <input type="number" value="1" class="cart-quantity">
+        <h2 class="cart-title">Your Cart</h2>
+        @php
+            $total = 0;
+        @endphp
+        @foreach ($cartItems as $items)
+        <div class="cart-content product_data">
+            <div class="cart-box">
+                <a href="{{ url('product_details/'.$items->product_id) }}"><img src="{{ asset('/frontend/images/'.$items->product->picture_1)}}" class="cart-img"></a>
+                <div class="detail-box">
+                    <input type="hidden" value="{{ $items->product_id }}" class="prod_id">
+                    <div class="cart-product-title">{{ $items->product->name }}</div>
+                    <div class="cart-price">{{ $items->product->price }} VND</div>
+                    <div class="input-group text-center mb-3" style="width:130px">
+                        <button class="decrement-btn changeQuantity" >-</button>
+                        <input type="text" name="quanity" id="quantity" class="form-control text-center qty-input" value="{{ $items->quantity }}">
+                        <button class="input-group-text increment-btn changeQuantity" >+</button>
                     </div>
-                    <i class='bx bxs-trash-alt cart-remove'></i>
                 </div>
+                <button class="btn deleteCartItem"><i class='bx bxs-trash-alt cart-remove'></i></button>
             </div>
-            {{-- Toltal --}}
-            <div class="total">
-                <div class="total-title">Total</div>
-                <div class="total-price">$0</div>
-                
-            </div>
-            {{-- Buy button --}}
-            <button type="button" class="btn-buy">Buy now</button>
-            {{-- Cart close --}}
-           <a href="{{ url()->previous() }}"><i class='bx bx-x' id="close-cart" ></i></a>
+        </div><br><hr>
+       
+        {{-- Cart close --}}
+       <a href="{{ url('/') }}"><i class='bx bx-x' id="close-cart" ></i></a> 
+
+        @php
+            $total += $items->product->price * $items->quantity ;
+        @endphp
+       @endforeach
+       {{-- Toltal --}}
+       <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price"> {{ $total }} VND</div>
         </div>
+        {{-- Buy button --}}
+        <button type="button" class="btn-buy" style="display: inline-block; margin-left: 40%;">Buy now</button>
+    </div>
+    
+    
+      
 </body>
 </html>

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
-
+use App\Models\Cart;
+use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 class CartController extends Controller
 {
     /**
@@ -12,9 +13,11 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($user = null)
+    public function index()
     {
+
         return view('cart');
+
     }
 
     /**
@@ -36,6 +39,39 @@ class CartController extends Controller
     public function store(Request $request)
     {
         //
+        $product_id = $request->input('product_id');
+        $product_qty = $request->input('product_qty');
+        
+            $prod_check = Product::where('id', $product_id)->first();
+            if($prod_check)
+            {
+                if(Cart::where('product_id',$product_id)->where('user_id',Auth::id())->exists())
+                {
+                    return response()->json(['status' => $prod_check->name." đã có sẵn trong giỏ hàng, vui lòng vào giỏ hàng kiểm tra!"]);
+                }
+                else{
+                    // if(Cart::where('user_id',Auth::id())->exists())
+                    // {
+                    //     $cartItem = Cart::where('user_id',Auth::id())->first();
+                    //     $cartItem->product_id = $product_id;
+                    //     $cartItem->quantity = $product_qty;
+                    //     $cartItem->save();
+                    //     return response()->json(['status' => $prod_check->name." da duoc them vao gio hang!"]);
+                    // }
+                    
+                    
+                        $cartItem = new Cart;
+                        $cartItem->user_id = Auth::id();
+                        $cartItem->product_id = $product_id;
+                        $cartItem->quantity = $product_qty;
+                        $cartItem->save();
+                        return response()->json(['status' => $prod_check->name." đã được thêm vào giỏ hàng! Vui lòng vào giỏ hàng để kiểm tra"]);
+                    
+                   
+                }
+                
+            }
+       
     }
 
     /**
@@ -44,9 +80,10 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($user)
     {
-        //
+        $cartItems = Cart::where('user_id',Auth::id())->get();
+        return view('cart', compact('cartItems'));
     }
 
     /**
@@ -82,4 +119,29 @@ class CartController extends Controller
     {
         //
     }
+    
+   public function deleteProduct(Request $request)
+   {
+        $prod_id = $request->input('prod_id');
+        $prod_check = Product::where('id', $prod_id)->first();
+        if(Cart::where('product_id',$prod_id)->where('user_id', Auth::id())->exists())
+        {
+            $cartItem = Cart::where('product_id',$prod_id)->where('user_id', Auth::id())->first();
+            $cartItem->delete();
+            return response()->json(['status' => 'Đã xóa sản phẩm '.$prod_check->name]);
+        }
+   }
+
+   public function updateProduct(Request $request)
+   {
+        $prod_id = $request->input('prod_id');
+        $qty = $request->input('qty');
+        if(Cart::where('product_id',$prod_id)->where('user_id', Auth::id())->exists())
+        {
+            $cartItem = Cart::where('product_id',$prod_id)->where('user_id', Auth::id())->first();
+            $cartItem->quantity = $qty;
+            $cartItem->update();
+            return response()->json(['status' => 'Số lượng sản phẩm đã được cập nhật!']);
+        }
+   }
 }

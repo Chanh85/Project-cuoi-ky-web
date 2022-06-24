@@ -13,14 +13,14 @@
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <a href="/home"><img src="/frontend/images/logoASMD.png" width="60px"></a>
+                <a href="/home"><img src="/frontend/images/logoASMD.png" width="125px"></a>
             </div>
             <nav>
                 <ul id="MenuItems">
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="product">Products</a></li>
-                    <li><a href="about">About</a></li>
-                    <li><a href="contactus">Contact</a></li>
+                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('product') }}">Products</a></li>
+                    <li><a href="{{ url('about') }}">About</a></li>
+                    <li><a href="{{ url('contactus') }}">Contact</a></li>
                     <li><a href="">Account</a></li>
                     @guest
                     @if (Route::has('login'))
@@ -55,13 +55,15 @@
                 @endguest
                 </ul>
             </nav>
-            <a href="cart"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;"></a>
+            @if(Auth::check())
+                 <a href="{{ url('cart/'.Auth::user()->id) }}"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;padding-left:10px;padding-right:0px;" id="cart-icon"></a>
+            @endif
             <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
         </div>
     </div>
 
     <div id="overlay">
-        <form onsubmit="event.preventDefault(); validateForm()" id="froms-contact">
+        <form onsubmit="event.preventDefault(); validateForm()">
             <h1>Contact Us</h1>
 
             <label for="name">Name:</label>
@@ -78,7 +80,7 @@
 
             <div class="center">
                 <input type ="submit" value="Send Message">
-                <p id="success"></p>
+                <p id="success"></p>            
             </div>
         </form>
     </div>

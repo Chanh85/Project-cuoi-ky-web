@@ -21,5 +21,9 @@ class Product extends Model
         'price'
     ];
 
+    public function cart()
+    {
+        return $this->hasOne(Cart::class);
+    }
 
 }

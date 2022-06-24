@@ -46,11 +46,11 @@
                     </div>
                     <nav>
                         <div id="MenuItems">
-                            <span><a href="/home">Home</a></span>
-                            <span><a href="/product">Products</a></span>
-                            <span><a href="/about">About</a></span>
-                            <span><a href="/contactus">Contact</a></span>
-                            <span><a href="/account">Account</a></span>
+                            <span><a href="{{ url('/home') }}">Home</a></span>
+                            <span><a href="{{ url('/product') }}">Products</a></span>
+                            <span><a href="{{ url('/about') }}">About</a></span>
+                            <span><a href="{{ url('/contactus') }}">Contact</a></span>
+                            <span><a href="">Account</a></span>
                             @guest
                             @if (Route::has('login'))
                                 <span class="nav-item">
@@ -63,6 +63,9 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </span>
                             @endif
+                            
+                           
+                            
                         @else
                             <span class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -81,10 +84,14 @@
                                     </form>
                                 </div>
                             </span>
+                            
                         @endguest
                         </div>
                     </nav>
-                    <a href="{{ 'cart' }}"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;padding-left:10px;padding-right:0px;" id="cart-icon"></a>
+                    @if(Auth::check())
+                        <a href="{{ url('cart/'.Auth::user()->id) }}"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;padding-left:10px;padding-right:0px;" id="cart-icon"></a>
+                    @endif 
+                   
                     <img src="/frontend/images/menu.png" class="menu-icon"  onclick="menutoggle()">
                 </div>
                 <div class="row">
