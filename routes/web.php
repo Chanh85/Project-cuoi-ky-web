@@ -21,7 +21,7 @@ Route::get('/', [App\Http\Controllers\AdminController::class, 'index'])->middlew
 
 Auth::routes();
 
-Route::resource('product', ProductController::class);
+Route::resource('product', ProductController::class)->only('index','store');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
