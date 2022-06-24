@@ -53,8 +53,14 @@
             margin-top:119px;
             padding-right:439px;
         }
+<<<<<<< HEAD
         .i{
             text-decoration: none;
+=======
+        a{
+            text-decoration: none !important;
+            color: #555;
+>>>>>>> 3b5af98cc528b05367f3085dd979db0a3340f942
         }
     </style>
 </head>

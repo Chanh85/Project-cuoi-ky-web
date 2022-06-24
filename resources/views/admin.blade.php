@@ -762,8 +762,23 @@
                     <h3>Add Product</h3>
                 </a>
                 <a href="#">
-                    <span class="material-symbols-outlined">logout</span>
-                    <h3>Logout</h3>
+                    <span class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <span class="material-symbols-outlined">Logout</span>
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </span>
                 </a>
             </div>
         </aside>
@@ -772,72 +787,9 @@
 
         <main>
             <h1>Dashboard</h1>
-
             <div class="date">
                 <input type="date">
             </div>
-
-            <div class="insights">
-                <div class="sales">
-                    <span class="material-symbols-outlined">analytics</span>
-                    <div class="middle">
-                        <div class="left">
-                            <h3>Total Sales</h3>
-                            <h1>$25,024</h1>
-                        </div>
-                        <div class="progress">
-                            <svg>
-                                <circle cx='38' cy='38' r='36'></circle>
-                            </svg>
-                            <div class="number">
-                                <p>81%</p>
-                            </div>
-                        </div>
-                    </div>
-                    <small class="text-muted">Last 24 Hours</small>
-                </div>
-                <!---- End of Sales ---->
-                <div class="expenses">
-                    <span class="material-symbols-outlined">bar_chart</span>
-                    <div class="middle">
-                        <div class="left">
-                            <h3>Total Expenses</h3>
-                            <h1>$14,024</h1>
-                        </div>
-                        <div class="progress">
-                            <svg>
-                                <circle cx='38' cy='38' r='36'></circle>
-                            </svg>
-                            <div class="number">
-                                <p>62%</p>
-                            </div>
-                        </div>
-                    </div>
-                    <small class="text-muted">Last 24 Hours</small>
-                </div>
-                <!---- End of Expenses ---->
-                <div class="income">
-                    <span class="material-symbols-outlined">stacked_line_chart</span>
-                    <div class="middle">
-                        <div class="left">
-                            <h3>Total Income</h3>
-                            <h1>$10,864</h1>
-                        </div>
-                        <div class="progress">
-                            <svg>
-                                <circle cx='38' cy='38' r='36'></circle>
-                            </svg>
-                            <div class="number">
-                                <p>81%</p>
-                            </div>
-                        </div>
-                    </div>
-                    <small class="text-muted">Last 24 Hours</small>
-                </div>
-                <!---- End of Income ---->
-            </div>
-            <!---- End of Insights ---->
-
             <div class="recent-orders">
                 <h2>Recent Orders</h2>
                 <table>
@@ -956,83 +908,7 @@
                 </div>
         </div>
             <!-- End of Top -->
-            <div class="recent-updates">
-                <h2>Recent Updates</h2>
-                <div class="updates">
-                    <div class="update">
-                        <div class="profile-photo">
-                            <img src="../images/profile-2.jpg" alt="">
-                        </div>
-
-                        <div class="message">
-                            <p><b>Mike Tyson</b> Received his order of Iphone</p>
-                            <small class="text-muted">2 Minutes Ago</small>
-                        </div>
-                    </div>
-                    <div class="update">
-                        <div class="profile-photo">
-                            <img src="../images/profile-3.jpg" alt="">
-                        </div>
-
-                        <div class="message">
-                            <p><b>Mike Tyson</b> Received his order of Iphone</p>
-                            <small class="text-muted">2 Minutes Ago</small>
-                        </div>
-                    </div>
-                    <div class="update">
-                        <div class="profile-photo">
-                            <img src="../images/profile-4.jpg" alt="">
-                        </div>
-
-                        <div class="message">
-                            <p><b>Mike Tyson</b> Received his order of Iphone</p>
-                            <small class="text-muted">2 Minutes Ago</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!---- End of recent update ---->
             <div class="sales-analytics">
-                <h2>Sales Analytics</h2>
-                <div class="item online">
-                    <div class="icon">
-                        <span class="material-symbols-outlined">shopping_cart</span>
-                    </div>
-                    <div class="right">
-                        <div class="info">
-                            <h3>ONLINE ORDERS</h3>
-                            <small class="text-muted">Last 24 Hours</small>
-                        </div>
-                        <h5 class="success">+39%</h5>
-                        <h3>3849</h3>
-                    </div>
-                </div>
-                <div class="item offline">
-                    <div class="icon">
-                        <span class="material-symbols-outlined"> local_mall </span>
-                    </div>
-                    <div class="right">
-                        <div class="info">
-                            <h3>OFFLINE ORDERS</h3>
-                            <small class="text-muted">Last 24 Hours</small>
-                        </div>
-                        <h5 class="danger">-17%%</h5>
-                        <h3>1100</h3>
-                    </div>
-                </div>
-                <div class="item customers">
-                    <div class="icon">
-                        <span class="material-symbols-outlined"> person </span>
-                    </div>
-                    <div class="right">
-                        <div class="info">
-                            <h3>NEW CUSTOMERS</h3>
-                            <small class="text-muted">Last 24 Hours</small>
-                        </div>
-                        <h5 class="success">+25%</h5>
-                        <h3>849</h3>
-                    </div>
-                </div>
                 <div class="item add-product">
                     <div>
                         <span class="material-symbols-outlined"> add </span>

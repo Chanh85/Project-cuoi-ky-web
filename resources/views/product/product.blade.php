@@ -27,6 +27,7 @@
         .col-4:hover{
             border:1px solid black;
         }
+
     </style>
 </head>
 <body>
@@ -87,13 +88,6 @@
 
         <div class="row_part2 row2">
             <h1>All Products</h1>
-            <select>
-                <option>Default Shorting</option>
-                <option>Shorting by price</option>
-                <option>Shorting by popularity</option>
-                <option>Shorting by rating</option>
-                <option>Shorting by sale</option>
-            </select>
         </div>
         <div class="row_part2" >
             @foreach($products as $product)
