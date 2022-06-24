@@ -23,10 +23,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
+<<<<<<< HEAD
         background-image: linear-gradient(to left, black,right);
         padding-left:500px;
         padding-right:500px;
         margin-bottom:20px;
+=======
+        background-image: url(../images/Background_Login.jpg);
+        background-repeat: no-repeat;
+        background-color: black;
+        background-size:90%;
+>>>>>>> 8f8b6ad20750ec75c1c4cd086bf6ec3bae9a6301
     }
 
     .container{
@@ -35,8 +42,11 @@
         width: 100%;
         background: #fff;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
         margin-bottom:20px;
         height:500px;
+=======
+>>>>>>> 8f8b6ad20750ec75c1c4cd086bf6ec3bae9a6301
     }
 
     .container .form{
@@ -46,7 +56,11 @@
     .container .forms{
         display: flex;
         align-items: center;
+<<<<<<< HEAD
         width: 200%;
+=======
+        width: 100%;
+>>>>>>> 8f8b6ad20750ec75c1c4cd086bf6ec3bae9a6301
     }
 
     .container .form{
@@ -160,10 +174,13 @@
         border-radius: 6px;
         background-color: #ff523b;
         cursor: pointer;
+<<<<<<< HEAD
     }
     .from{
         margin-bottom: 10px;
     }
+=======
+>>>>>>> 8f8b6ad20750ec75c1c4cd086bf6ec3bae9a6301
 
     </style>
         <meta charset="utf-8">
