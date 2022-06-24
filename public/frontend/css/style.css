@@ -454,7 +454,6 @@ td:last-child{
 th:last-child{
     text-align: right;
 }
-<<<<<<< HEAD
 
 /* --------Account----------  */
 *{
@@ -554,32 +553,19 @@ button[type="submit"]:hover{
     border-radius: 25px;
 }
 
-.containercre {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 100%;
-  }
-  input[type="file"] {
-    position: absolute;
-    z-index: -1;
-    top: 10px;
-    left: 8px;
-    font-size: 17px;
-    color: #b8b8b8;
-  }
-  .button-wrap {
-    position: relative;
-  }
-  .button {
-    display: inline-block;
-    padding: 12px 18px;
-    cursor: pointer;
-    border-radius: 5px;
-    background-color: #d84127;
-    font-size: 16px;
-    font-weight: bold;
+
+  .customfile{
+    border: 2px solid #ff523b;
+    border-radius: 50px;
+    padding: 2px;
+    font-size: 10px;
+}
+
+.customfile::-webkit-file-upload-button{
+    background: #ff523b;
     color: #fff;
-  }
-=======
->>>>>>> 1f4911b9bc139eccb65fb837fd3aa6f8a4d97163
+    padding: 8px 16px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}

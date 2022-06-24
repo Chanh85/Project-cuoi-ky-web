@@ -454,7 +454,6 @@ td:last-child{
 th:last-child{
     text-align: right;
 }
-<<<<<<< HEAD
 
 /* --------Account----------  */
 *{
@@ -569,5 +568,3 @@ button[type="submit"]:hover{
     border-radius: 50px;
     cursor: pointer;
 }
-=======
->>>>>>> 1f4911b9bc139eccb65fb837fd3aa6f8a4d97163
