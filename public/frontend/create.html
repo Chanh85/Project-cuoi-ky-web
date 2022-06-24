@@ -29,9 +29,10 @@
 
     <h1 class="title" >ADD NEW PRODUCT</h1>
 
-    <form class="formcreate" style="margin-top:30px">
+    <form style="line-height: 1.8;" action="{{ route('product.store') }}" method="POST" class="formcreate">
+        @csrf
         <div class="input-cre">
-            <h3 style="margin-bottom: 10px; "  class="title" >Add New Product</h3>
+            <h3 style="margin-bottom: 10px; "  class="title" >Information</h3>
             <label style="margin-bottom:10px" for="name">Product's Name:</label>
             <input style="width: 100%;margin-bottom:10px" type="text", name="name" id="name"> 
             <!-- @error('name')
@@ -40,32 +41,6 @@
             </span>
             @enderror -->
         </div>
-        <div class="input-cre">   
-            <label style="margin-bottom:10px" for="name">Trademark:</label>
-            <input style="width: 100%;" type="text", name="name" id="name"> 
-        </div>
-    </form>
-
-    <form style="line-height: 1.8;" action="{{ route('product.store') }}" method="POST" class="formcreate">
-        @csrf
-        <h3 style="margin-bottom: 10px;"  class="title" >Basic Information</h3> 
-        <div class="input-cre">   
-            <label for="name">Manufacturer:</label>
-            <input style="width: 100%" type="text", name="name" id="name"> 
-        </div>
-        <div class="input-cre">   
-            <label for="name">Model:</label>
-            <input style="width: 100%" type="text", name="name" id="name"> 
-        </div>
-        <div class="input-cre">   
-            <label for="name">Internal memory:</label>
-            <input style="width: 100%" type="text", name="name" id="name"> 
-        </div>
-        <div class="input-cre">   
-            <label for="name">Operating system:</label>
-            <input style="width: 100%" type="text", name="name" id="name"> 
-        </div>
-        
         <div>
             <label for="picture1">Pictures 1 of the product:</label>
             <div class="containercre">
