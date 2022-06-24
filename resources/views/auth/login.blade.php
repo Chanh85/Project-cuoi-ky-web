@@ -8,34 +8,192 @@
     <link rel="stylesheet" href="css/style_login.css">
     <script src="../frontend/js/scripts.js"></script>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    {{-- <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
-        .btn-primary {
-            width:450px;
-            height:50px;
-            font-size:27px;
-            color:white;
-            background-color:#ff523b;
-            border:none;
-            border-radius:5px;
-            cursor:pointer;
-        }
+        /* Login Form */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body{
+        height: 100vh;
+        width:100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(to left, black,right);
+        padding-left:500px;
+        padding-right:500px;
+        margin-bottom:20px;
+    }
+
+    .container{
+        position: relative;
+        max-width: 500px;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom:20px;
+        height:500px;
+    }
+
+    .container .form{
+        padding: 30px
+    }
+
+    .container .forms{
+        display: flex;
+        align-items: center;
+        width: 200%;
+    }
+
+    .container .form{
+        width: 50%;
+        padding: 30px;
+    }
+
+    .container .form .title{
+        position: relative;
+        font-size: 27px;
+        font-weight: 600;
+    }
+
+    .form .title::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 30px;
+        background-color: #ff523b;
+        border-radius: 25px;
+    }
+
+    .form .input-field{
+        margin-top: 30px;
+        position: relative;
+        height: 50px;
+        width: 100%;
+    }
+
+    .form login{
+
+    }
+    .input-field input{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        padding: 0 35px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        border-bottom: 2px solid #ccc;
+        border-top: 2px solid transparent;
+    }
+
+    .input-field input:is(:focus, :valid){
+        border-bottom-color: #ff523b;
+    }
+
+    .input-field i{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #999;
+        font-size: 23px;
+    }
+
+    .input-field input:is(:focus, :valid) ~ i{
+        color: #ff523b;
+    }
+
+    .input-field i.icon{
+        left: 0;
+    }
+    .input-field i.showHidePw{
+        right: 0;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .form .checkbox-text{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .checkbox-text .checkbox-content{
+        display: flex;
+        align-items: center;
+    }
+
+    .checkbox-content input{
+        margin: 0 8px -2px 4px;
+        accent-color: #ff523b;
+    }
+
+    .form a.text{
+        color: #4070f4;
+        font-size: 14px;
+    }
+
+    .form a{
+        color: #ff523b;
+        text-decoration: none;
+    }
+    .form a:hover{
+        text-decoration: underline;
+    }
+
+    .form .button{
+        margin-top: 35px;
+    }
+
+    .form .button input{
+        border: none;
+        color: #fff;
+        font-size: 17px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        border-radius: 6px;
+        background-color: #ff523b;
+        cursor: pointer;
+    }
+    .from{
+        margin-bottom: 10px;
+    }
+
+    </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <title>{{ config('app.name', 'Laravel') }}</title>
+
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+
+        {{-- <!-- Fonts -->
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
+
+        <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <style>
+            .btn-primary {
+                width:450px;
+                height:50px;
+                font-size:27px;
+                color:white;
+                background-color:#ff523b;
+                border:none;
+                border-radius:5px;
+                cursor:pointer;
+            }
     </style>
 </head>
 <body>
@@ -97,80 +255,3 @@
 </body>
 </html>
 
-{{-- @extends('layouts.app')
-
-    @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="adverting-apple">
-                </div>
-                <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<<<<<<< HEAD
-@endsection
-=======
-@endsection --}}
->>>>>>> 76382ee040c839a455e8512d80a80034c3baa4c6

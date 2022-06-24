@@ -123,7 +123,7 @@
                 </div>
                 <div class="col-sm-5">
                     <div class="img-wrap">
-                        <img src="frontend/TanVuong/images/vuong.jpg" style="width:200px;height:200px;">
+                        <img src="frontend/TanVuong/images/avt.jpg" style="width:200px;height:200px;">
                     </div>
                 </div>
                 <div class="col-sm-7">
