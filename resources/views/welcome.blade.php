@@ -63,9 +63,9 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </span>
                             @endif
-                            
-                           
-                            
+
+
+
                         @else
                             <span class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -84,14 +84,14 @@
                                     </form>
                                 </div>
                             </span>
-                            
+
                         @endguest
                         </div>
                     </nav>
                     @if(Auth::check())
                         <a href="{{ url('cart/'.Auth::user()->id) }}"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;padding-left:10px;padding-right:0px;" id="cart-icon"></a>
-                    @endif 
-                   
+                    @endif
+
                     <img src="/frontend/images/menu.png" class="menu-icon"  onclick="menutoggle()">
                 </div>
                 <div class="row">
@@ -157,68 +157,6 @@
             </div>
         </div>
     </div>
-<!--- Testimonial ---->
-    <div class="testimonial">
-        <div class="small-container">
-            <div class="row_part2">
-                <div class="col-3">
-                    <i class="fa fa-quote-left"></i>
-                    <p>Measure your blood oxygen level with a revolutionary sensor and app.
-                        Take an ECG anytime, anywhere.
-                        Check your heart rate. Along with other innovations like mindfulness and
-                        sleep tracking to keep you healthy from head to toe.
-                        Series 7 puts more health insights in sight.
-                    </p>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <img src="/frontend/Tanvuong/images/user-1.png">
-                    <h3>May Parker</h3>
-                </div>
-                <div class="col-3">
-                    <i class="fa fa-quote-left"></i>
-                    <p>Measure your blood oxygen level with a revolutionary sensor and app.
-                        Take an ECG anytime, anywhere.
-                        Check your heart rate. Along with other innovations like mindfulness and
-                        sleep tracking to keep you healthy from head to toe.
-                        Series 7 puts more health insights in sight.
-                    </p>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <img src="/frontend/Tanvuong/images/user-2.png">
-                    <h3>Doctor Strange</h3>
-                </div>
-                <div class="col-3">
-                    <i class="fa fa-quote-left"></i>
-                    <p>Big screen. Huge impact.
-                        The challenge was to create a bigger display while barely expanding the dimensions of the watch itself.
-                        To do so, the display was completely re‑engineered reducing the borders by 40%,
-                        allowing for more screen area than both Series 6 and Series 3.
-                        Now that’s something to smile about.
-                    </p>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <img src="/frontend/Tanvuong/images/user-3.png">
-                    <h3>Tony Stark</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-
 <!---- brands ---->
     <div class="brands">
         <div class="small-container">
@@ -282,4 +220,4 @@
     </div>
 </body>
 </html>
-gi
+

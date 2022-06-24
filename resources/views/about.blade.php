@@ -53,6 +53,10 @@
             margin-top:119px;
             padding-right:439px;
         }
+        a{
+            text-decoration: none !important;
+            color: #555;
+        }
     </style>
 </head>
 <body>
