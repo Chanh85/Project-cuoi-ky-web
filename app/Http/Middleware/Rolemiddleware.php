@@ -19,7 +19,7 @@ class Rolemiddleware
         if(!Auth::user())
         {
             return redirect('/home');
-            //return abort('Khong duoc truy cap', 503);
+           
         }
         else if(Auth::user()->role->name != $role)
         {

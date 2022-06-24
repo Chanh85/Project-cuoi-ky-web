@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cart;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Closure;
@@ -32,7 +33,13 @@ class LoginController extends Controller
     //  */
      protected $redirectTo = RouteServiceProvider::HOME;
 
-
+    //  protected function redirectTo()
+    //  {
+    //      if (Cart::where('user_id',Auth::id())) {
+    //          return url('cart/'.Auth::user());
+    //      }
+    //      return '/home';
+    //  }
 
     /**
      * Create a new controller instance.

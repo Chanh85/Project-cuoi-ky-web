@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>All Products - Smartphone Store</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,7 +12,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="/frontend/scripts.js"></script>
     <link rel="stylesheet" href="/frontend/style.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{{ asset('frontend/js/custom.js') }}"></script>
 </head>
 <body>
             <div class="container">
@@ -20,10 +23,10 @@
                     </div>
                     <nav>
                         <ul id="MenuItems">
-                            <li><a href="/home">Home</a></li>
-                            <li><a href="/product">Products</a></li>
-                            <li><a href="">About</a></li>
-                            <li><a href="/contactus">Contact</a></li>
+                            <li><a href="{{ url('/home') }}">Home</a></li>
+                            <li><a href="{{ url('product') }}">Products</a></li>
+                            <li><a href="{{ url('about') }}">About</a></li>
+                            <li><a href="{{ url('contactus') }}">Contact</a></li>
                             <li><a href="">Account</a></li>
                             @guest
                             @if (Route::has('login'))
@@ -58,13 +61,15 @@
                         @endguest
                         </ul>
                     </nav>
-                    <a href="/cart"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;"></a>
+                    @if(Auth::check())
+                    <a href="{{ url('cart/'.Auth::user()->id) }}"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;padding-left:10px;padding-right:0px;" id="cart-icon"></a>
+                    @endif
                     <img src="/frontend/images/menu.png" class="menu-icon" onclick="menutoggle()">
                 </div>
             </div>
 <!--------single product details--------->
     <div class="small-container single-product">
-        <div class="row_part2">
+        <div class="row_part2 product_data">
              <div class="col-2">
                  <img src="{{ asset('/frontend/images/'.$details->picture_1)}}" width="90%" id="ProductImg">
 
@@ -86,8 +91,13 @@
              <div class="col-2">
                  <h1>{{ $details->name }}</h1>
                  <h4>{{ $details->price }} VND</h4>
-                 <input type="number" value="1">
-                 <a href="/cart" class="btn">Add To Cart</a>
+                 <div class="input-group text-center mb-3" style="width:130px">
+                    <input type="hidden" value="{{ $details->id }}" class="prod_id">
+                    <button class="decrement-btn " >-</button>
+                    <input type="text" name="quanity" id="quantity" class="form-control text-center qty-input" value="1">
+                    <button class="input-group-text increment-btn " >+</button>
+                 </div>
+                 <button type="button" class="btn addtoCartBtn">Add to Cart</button>
                  <h3>Product Details <i class="fa fa-indent"></i></h3>
                  <br>
                  <p>{{ $details->description }}</p>

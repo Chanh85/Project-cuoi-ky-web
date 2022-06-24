@@ -14,7 +14,7 @@ body{
     background-image: url(../images/Background_Login.jpg);
     background-repeat: no-repeat;
     background-color: black;
-    background-size: 100%;
+    background-size: 125%;
 }
 
 .container{
@@ -64,7 +64,9 @@ body{
     width: 100%;
 }
 
+.form login{
 
+}
 .input-field input{
     position: absolute;
     height: 100%;

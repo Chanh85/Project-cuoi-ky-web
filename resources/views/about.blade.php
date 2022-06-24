@@ -63,11 +63,11 @@
                 </div>
                 <nav>
                     <ul id="MenuItems">
-                        <li><a href="/home">Home</a></li>
-                        <li><a href="product">Products</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="contactus">Contact</a></li>
-                        <li><a href="about">Account</a></li>
+                        <li><a href="{{ url('/home') }}">Home</a></li>
+                        <li><a href="{{ url('product') }}">Products</a></li>
+                        <li><a href="{{ url('about') }}">About</a></li>
+                        <li><a href="{{ url('contactus') }}">Contact</a></li>
+                        <li><a href="">Account</a></li>
                         @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
@@ -101,7 +101,9 @@
                     @endguest
                     </ul>
                 </nav>
-                <a href="cart"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;"></a>
+                @if(Auth::check())
+                    <a href="{{ 'cart/'.Auth::user()->id }}"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;padding-left:10px;padding-right:0px;" id="cart-icon"></a>
+                 @endif
                 <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
         </div>
@@ -121,7 +123,7 @@
                 </div>
                 <div class="col-sm-5">
                     <div class="img-wrap">
-                        <img src="frontend/TanVuong/images/vuong.jpg" style="width:200px;height:200px;">
+                        <img src="frontend/TanVuong/images/avt.jpg" style="width:200px;height:200px;">
                     </div>
                 </div>
                 <div class="col-sm-7">
