@@ -9,7 +9,7 @@ class AdminController extends Controller
     //
     public function index()
     {
-        return 'This is the admin page';
+        return view('admin');
     }
 
      /**

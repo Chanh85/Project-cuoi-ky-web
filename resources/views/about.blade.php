@@ -53,6 +53,15 @@
             margin-top:119px;
             padding-right:439px;
         }
+<<<<<<< HEAD
+        .i{
+            text-decoration: none;
+=======
+        a{
+            text-decoration: none !important;
+            color: #555;
+>>>>>>> 3b5af98cc528b05367f3085dd979db0a3340f942
+        }
     </style>
 </head>
 <body>
@@ -67,7 +76,7 @@
                         <li><a href="{{ url('product') }}">Products</a></li>
                         <li><a href="{{ url('about') }}">About</a></li>
                         <li><a href="{{ url('contactus') }}">Contact</a></li>
-                        <li><a href="">Account</a></li>
+                        <li><a href="/account">Account</a></li>
                         @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
@@ -123,7 +132,7 @@
                 </div>
                 <div class="col-sm-5">
                     <div class="img-wrap">
-                        <img src="frontend/TanVuong/images/vuong.jpg" style="width:200px;height:200px;">
+                        <img src="frontend/TanVuong/images/avt.jpg" style="width:200px;height:200px;">
                     </div>
                 </div>
                 <div class="col-sm-7">

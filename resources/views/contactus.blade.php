@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/frontend/js/scripts.js"></script>
-    <link rel="stylesheet" href="/frontend/css/style_contact.css">
     <link rel="stylesheet" href="/frontend/css/style.css">
+    <link rel="stylesheet" href="/frontend/css/style_contact.css">
     <title>Contact-Us</title>
 </head>
 <body>
@@ -17,11 +17,11 @@
             </div>
             <nav>
                 <ul id="MenuItems">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('product') }}">Products</a></li>
-                    <li><a href="{{ url('about') }}">About</a></li>
-                    <li><a href="{{ url('contactus') }}">Contact</a></li>
-                    <li><a href="">Account</a></li>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/product">Products</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="/account">Account</a></li>
                     @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
@@ -80,7 +80,7 @@
 
             <div class="center">
                 <input type ="submit" value="Send Message">
-                <p id="success"></p>            
+                <p id="success"></p>
             </div>
         </form>
     </div>
