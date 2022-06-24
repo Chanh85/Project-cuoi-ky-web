@@ -187,7 +187,7 @@ body{
     .logo{
         position:absolute;
         top:-20px;
-        left:20px;
+        left:20 px;
     }
     </style>
 </head>

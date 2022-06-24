@@ -53,6 +53,9 @@
             margin-top:119px;
             padding-right:439px;
         }
+        .i{
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -67,7 +70,7 @@
                         <li><a href="{{ url('product') }}">Products</a></li>
                         <li><a href="{{ url('about') }}">About</a></li>
                         <li><a href="{{ url('contactus') }}">Contact</a></li>
-                        <li><a href="">Account</a></li>
+                        <li><a href="/account">Account</a></li>
                         @guest
                         @if (Route::has('login'))
                             <li class="nav-item">

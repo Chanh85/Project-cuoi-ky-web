@@ -44,3 +44,11 @@ Route::get('about', function(){
 Route::get('createP', [App\Http\Controllers\AdminController::class, 'create'])->middleware(['auth','role:admin'])->name('product.create');
 Route::post('delete-cart-item',[App\Http\Controllers\CartController::class, 'deleteProduct']);
 Route::post('updateCart',[App\Http\Controllers\CartController::class, 'updateProduct']);
+
+Route::get('account', function(){
+    return view('account');
+});
+
+Route::get('create', function(){
+    return view('create');
+});

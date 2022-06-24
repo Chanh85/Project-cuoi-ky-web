@@ -17,11 +17,11 @@
             </div>
             <nav>
                 <ul id="MenuItems">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('product') }}">Products</a></li>
-                    <li><a href="{{ url('about') }}">About</a></li>
-                    <li><a href="{{ url('contactus') }}">Contact</a></li>
-                    <li><a href="">Account</a></li>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/product">Products</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="/account">Account</a></li>
                     @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
