@@ -18,7 +18,11 @@ form{
     max-width: 550px;
     width: 90%;
     background: white;
+    margin-left: 20%;
     margin-top: 20px;
+    padding: 40px;
+    margin-top: 90px;
+    padding:20px;
     border-radius: 3px;
     box-sizing: border-box;
 }

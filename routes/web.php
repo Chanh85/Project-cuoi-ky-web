@@ -43,3 +43,14 @@ Route::get('about', function(){
 
 Route::get('createP', [App\Http\Controllers\AdminController::class, 'create'])->middleware(['auth','role:admin'])->name('product.create');
 
+Route::get('admin', function(){
+    return view('admin');
+});
+
+Route::get('account', function(){
+    return view('account');
+});
+
+
+
+

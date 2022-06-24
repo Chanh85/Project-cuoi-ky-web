@@ -35,45 +35,38 @@
             <h3 style="margin-bottom: 10px; "  class="title" >Information</h3>
             <label style="margin-bottom:10px" for="name">Product's Name:</label>
             <input style="width: 100%;margin-bottom:10px" type="text", name="name" id="name"> 
-            <!-- @error('name')
+            @error('name')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
-            @enderror -->
+            @enderror
         </div>
         <div>
             <label for="picture1">Pictures 1 of the product:</label>
             <div class="containercre">
                 <div class="button-wrap">
-                  <label class="button" for="upload">Upload File</label>
-                  <input id="upload" type="file" name="picture1" id="picture1" >
+                  <input class="customfile" id="upload" type="file" name="picture1" id="picture1" >
                 </div>
             </div>
         </div>
         <div>
-            <label for="picture2">Pictures 2 of the product:</label>
-            <div class="containercre">
-                <div class="button-wrap">
-                  <label class="button" for="upload">Upload File</label>
-                  <input id="upload" type="file" name="picture1" id="picture1" >
-                </div>
-            </div> 
+            <label for="picture1">Pictures 2 of the product:</label>
+                
+                <input class="customfile" id="upload" type="file" name="picture1" id="picture1" >
         </div>
         <div>
             <label for="picture3">Pictures 3 of the product:</label>
             <div class="containercre">
                 <div class="button-wrap">
-                  <label class="button" for="upload">Upload File</label>
-                  <input id="upload" type="file" name="picture1" id="picture1" >
+                  <input class="customfile" id="upload" type="file" name="picture1" id="picture1" >
                 </div>
             </div>
         </div>
         <div>
             <label for="picture4">Pictures 4 of the product:</label>
             <div class="containercre">
-                <div class="button-wrap">
-                  <label class="button" for="upload">Upload File</label>
-                  <input id="upload" type="file" name="picture1" id="picture1" >
+                <div class="button-wrap"> 
+                  <input class="customfile" id="upload" type="file" name="picture1" id="picture1" >
                 </div>
             </div> 
         </div>
