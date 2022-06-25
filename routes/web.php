@@ -46,3 +46,11 @@ Route::post('delete-cart-item',[App\Http\Controllers\CartController::class, 'del
 Route::post('updateCart',[App\Http\Controllers\CartController::class, 'updateProduct']);
 Route::get('checkout',[App\Http\Controllers\CheckoutController::class, 'index']);
 Route::post('place-order',[App\Http\Controllers\CheckoutController::class, 'placeorder']);
+
+Route::get('account', function(){
+    return view('account');
+});
+
+Route::get('cart', function(){
+    return view('cart');
+});

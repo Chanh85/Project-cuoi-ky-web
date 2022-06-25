@@ -15,6 +15,24 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="{{ asset('frontend/js/custom.js') }}"></script>
+    <style>
+        #logout-form{
+            position:absolute;
+            top:-50px;
+        }
+        .form-control{
+    width: 100%;
+    height: 32px;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    padding: 4px 8px;
+    outline: none;
+}
+
+.form-control:hover{
+    background-color: rgba(243, 116, 74, 0.518);
+}
+    </style>
 </head>
 <body>
     <div class="container">
@@ -28,7 +46,7 @@
                     <li><a href="{{ url('product') }}">Products</a></li>
                     <li><a href="{{ url('about') }}">About</a></li>
                     <li><a href="{{ url('contactus') }}">Contact</a></li>
-                    <li><a href="">Account</a></li>
+                    <li><a href="/account">Account</a></li>
                     @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
@@ -73,39 +91,39 @@
             @csrf
             <div class="row">
                 <div style="margin-left: 20%; display:inline">
-                    Basic details
+                    <h3 style="text-align:center;":>Basic details</h3>
                     <hr>
                     <div>
                         <label for="">Họ</label>
-                        <input type="text" name="lname" value="{{ Auth::user()->fname }}" placeholder="Họ" required>
+                        <input type="text" name="lname" value="{{ Auth::user()->fname }}" placeholder="Họ" required class="form-control">
                     </div>
                     <div>
                         <label for="">Tên</label>
-                        <input type="text" name="fname" value="{{ Auth::user()->lname }}" placeholder="Tên" required>
+                        <input type="text" name="fname" value="{{ Auth::user()->lname }}" placeholder="Tên" required class="form-control">
                     </div>
                     <div>
                         <label for="">Ngày sinh: </label>
-                        <input type="date" name="DOB" value="{{ Auth::user()->DOB }}" placeholder="Ngày sinh" required>
+                        <input type="date" name="DOB" value="{{ Auth::user()->DOB }}" placeholder="Ngày sinh" required class="form-control">
                     </div>
                     <div>
                         <label for="">Số điện thoại </label>
-                        <input type="text" name="phonenum" value="{{ Auth::user()->phonenum }}" placeholder="Số điện thoại" required>
+                        <input type="text" name="phonenum" value="{{ Auth::user()->phonenum }}" placeholder="Số điện thoại" required class="form-control">
                     </div>
                     <div>
                         <label for="">Email</label>
-                        <input type="text" name="email" value="{{ Auth::user()->email }}" placeholder="Email" required>
+                        <input type="text" name="email" value="{{ Auth::user()->email }}" placeholder="Email" required class="form-control">
                     </div>
                     <div>
                         <label for="">Địa chỉ</label>
-                        <input type="text" name="address" value="{{ Auth::user()->address }}" placeholder="Địa chỉ" required>
+                        <input type="text" name="address" value="{{ Auth::user()->address }}" placeholder="Địa chỉ" required class="form-control">
                     </div>
                     <div>
                         <label for="">Quận</label>
-                        <input type="text" name="district"  value="{{ Auth::user()->district }}" placeholder="Quận" required>
+                        <input type="text" name="district"  value="{{ Auth::user()->district }}" placeholder="Quận" required class="form-control">
                     </div>
                     <div>
                         <label for="">Thành phố</label>
-                        <input type="text" name="city" value="{{ Auth::user()->city }}" placeholder="Thành phố" required>
+                        <input type="text" name="city" value="{{ Auth::user()->city }}" placeholder="Thành phố" required class="form-control">
                     </div>
                 </div>
                 <div style="margin-left: 40%; display:inline;">

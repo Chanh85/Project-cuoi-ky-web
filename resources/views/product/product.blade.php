@@ -27,7 +27,11 @@
         .col-4:hover{
             border:1px solid black;
         }
-
+        #logout-form{
+            position:absolute;
+            top:-90px;
+            right:10px;
+        }
     </style>
 </head>
 <body>
@@ -99,11 +103,11 @@
             @if($product->quantity > 0)
                 <p>In stock</p>
             @else
-                <p>Out stock</p> 
-            @endif  
+                <p>Out stock</p>
+            @endif
             </div>
             @endforeach
-           
+
         </div>
         <div class="page-btn">
             <span>1</span>

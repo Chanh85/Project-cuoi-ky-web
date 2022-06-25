@@ -33,6 +33,10 @@
         .col-4:hover{
             border:1px solid black;
         }
+        #logout-form{
+            position:absolute;
+            top:-50px;
+        }
     </style>
 </head>
 <body>
@@ -89,7 +93,7 @@
                         </div>
                     </nav>
                     @if(Auth::check())
-                        <a href="{{ url('cart/'.Auth::user()->id) }}"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;padding-left:10px;padding-right:0px;" id="cart-icon"></a>
+                        <a href="{{ url('cart/'.Auth::user()->id) }}"><img src="/frontend/images/shopping-cart.png" width="30px" height="55px" style="cursor:pointer;padding-left:10px;padding-right:0px; padding-bottom:30px" id="cart-icon"></a>
                     @endif
 
                     <img src="/frontend/images/menu.png" class="menu-icon"  onclick="menutoggle()">
@@ -136,9 +140,9 @@
                 @if($product->quantity > 0)
                 <p>In stock</p>
             @else
-                <p>Out of stock</p> 
+                <p>Out of stock</p>
             @endif
-            </div>  
+            </div>
             @endforeach
         </div>
     </div>

@@ -598,12 +598,12 @@ button[type="submit"]:hover{
                     <li><a href="/account">Account</a></li>
                 </ul>
             </nav>
-            <a href="/frontend/cart.html"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;"></a>
+            <a href="/cart"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;"></a>
             <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
         </div>
     </div>
     <h1 class="title" style=" padding:10px">Profile Account</h1>
-    <p style="text-align:center">Manage profile information for account security</p>
+    <p style="text-align:center;margin-bottom:10px;">Manage profile information for account security</p>
     <hr style="margin:auto; margin-bottom:20px; width:50%">
     <form method="post">
         <div class="content">

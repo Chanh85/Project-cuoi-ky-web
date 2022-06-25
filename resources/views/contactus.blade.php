@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="/frontend/css/style.css">
     <link rel="stylesheet" href="/frontend/css/style_contact.css">
     <title>Contact-Us</title>
+    <style>
+         #logout-form{
+            position:absolute;
+            top:-90px;
+            right:10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">

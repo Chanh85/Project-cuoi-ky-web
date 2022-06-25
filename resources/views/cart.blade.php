@@ -115,6 +115,10 @@
             color:black;
             cursor:pointer;
         }
+        #logout-form{
+            position:absolute;
+            top:-50px;
+        }
     </style>
 </head>
 <body>
@@ -129,7 +133,7 @@
                     <li><a href="{{ url('product') }}">Products</a></li>
                     <li><a href="{{ url('about') }}">About</a></li>
                     <li><a href="{{ url('contactus') }}">Contact</a></li>
-                    <li><a href="">Account</a></li>
+                    <li><a href="/account">Account</a></li>
                     @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
@@ -170,8 +174,8 @@
         </div>
     </div>
 
-    
-    
+
+
     <div class="cart">
         <h2 class="cart-title">Your Cart</h2>
         @php
@@ -201,9 +205,9 @@
                 <button class="btn deleteCartItem"><i class='bx bxs-trash-alt cart-remove'></i></button>
             </div>
         </div><br><hr>
-       
+
         {{-- Cart close --}}
-       <a href="{{ url('/') }}"><i class='bx bx-x' id="close-cart" ></i></a> 
+       <a href="{{ url('/') }}"><i class='bx bx-x' id="close-cart" ></i></a>
        @endforeach
        {{-- Toltal --}}
        <div class="total">
@@ -213,8 +217,8 @@
         {{-- Buy button --}}
         <a href="{{ url('checkout') }}"><button type="button" class="btn-buy" style="display: inline-block; margin-left: 40%;">Buy now</button></a>
     </div>
-    
-    
-      
+
+
+
 </body>
 </html>

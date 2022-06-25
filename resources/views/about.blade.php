@@ -53,14 +53,8 @@
             margin-top:119px;
             padding-right:439px;
         }
-<<<<<<< HEAD
-        .i{
-            text-decoration: none;
-=======
-        a{
+      #MenuItems    .a{
             text-decoration: none !important;
-            color: #555;
->>>>>>> 3b5af98cc528b05367f3085dd979db0a3340f942
         }
     </style>
 </head>
@@ -111,7 +105,7 @@
                     </ul>
                 </nav>
                 @if(Auth::check())
-                    <a href="{{ 'cart/'.Auth::user()->id }}"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;padding-left:10px;padding-right:0px;" id="cart-icon"></a>
+                    <a href="{{ 'cart/'.Auth::user()->id }}"><img src="/frontend/images/shopping-cart.png" width="30px" height="45px" style="cursor:pointer;padding-left:0px;padding-right:0px; padding-bottom:15px; " id="cart-icon"></a>
                  @endif
                 <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
