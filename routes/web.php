@@ -26,7 +26,6 @@ Route::resource('product', ProductController::class)->only('index','store');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
 Route::resource('cart', CartController::class)->only('index','store','show');
-// Route::get('cart/{user?}', [App\Http\Controllers\CartController::class], 'index');
 
 Route::get('contactus', function(){
     return view('contactus');
@@ -42,10 +41,15 @@ Route::get('about', function(){
 });
 
 Route::get('createP', [App\Http\Controllers\AdminController::class, 'create'])->middleware(['auth','role:admin'])->name('product.create');
+
 Route::post('delete-cart-item',[App\Http\Controllers\CartController::class, 'deleteProduct']);
 Route::post('updateCart',[App\Http\Controllers\CartController::class, 'updateProduct']);
+
 Route::get('checkout',[App\Http\Controllers\CheckoutController::class, 'index']);
 Route::post('place-order',[App\Http\Controllers\CheckoutController::class, 'placeorder']);
+
+Route::get('my-orders',[App\Http\Controllers\UserController::class, 'index']);
+Route::get('view-order/{id}', [App\Http\Controllers\UserController::class, 'view']);
 
 Route::get('account', function(){
     return view('account');
@@ -54,3 +58,4 @@ Route::get('account', function(){
 Route::get('cart', function(){
     return view('cart');
 });
+Route::post('/updateInfo',[App\Http\Controllers\UserController::class, 'update']);

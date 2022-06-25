@@ -197,7 +197,7 @@ body{
     </div>
 <div class="container">
     <div class="forms">
-        <div class="form Register">
+        <div class="form Register" style="padding-top:10px;">
             <span class="title">Register</span>
 
             <form method="POST" action="{{ route('register') }}">

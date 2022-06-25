@@ -54,7 +54,14 @@
                             <span><a href="{{ url('/product') }}">Products</a></span>
                             <span><a href="{{ url('/about') }}">About</a></span>
                             <span><a href="{{ url('/contactus') }}">Contact</a></span>
+                            @if(Auth::check())
                             <span><a href="{{ url('/account') }}">Account</a></span>
+                            <span><a href="{{ url('my-orders') }}">My Orders</a></span>
+                                @if(Auth::user()->role_id == 1)
+                                <span><a href="{{ url('/') }}">Admin Page</a></span>
+                                @endif
+                            @endif
+                           
                             @guest
                             @if (Route::has('login'))
                                 <span class="nav-item">
@@ -151,7 +158,7 @@
         <div class="small-container">
             <div class="row_part2">
                 @foreach ($products as $product)
-                @if($product->name == 'Xiaomy 5G')
+                @if($product->id == 2)
                     <div class="col-2">
                         <img src="{{ asset('/frontend/images/'.$product->picture_1)}}" class="offer-img">
                     </div>

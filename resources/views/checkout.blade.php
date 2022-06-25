@@ -46,7 +46,18 @@
                     <li><a href="{{ url('product') }}">Products</a></li>
                     <li><a href="{{ url('about') }}">About</a></li>
                     <li><a href="{{ url('contactus') }}">Contact</a></li>
+<<<<<<< HEAD
                     <li><a href="/account">Account</a></li>
+=======
+                    @if(Auth::check())
+                        <li><a href="{{ url('account') }}">Account</a></li>
+                        <li><a href="{{ url('my-orders') }}">My Orders</a></li>
+                        @if(Auth::user()->role_id==1)
+                        <li><a href="{{ url('/') }}">Admin Page</a></li>
+                        @endif
+                    @endif
+                    
+>>>>>>> 8099727ebd97bad930c05ac970c5fb102d3dfb99
                     @guest
                     @if (Route::has('login'))
                         <li class="nav-item">

@@ -713,7 +713,7 @@
             .right .top button span{
                 font-size: 2rem;
             }
-        }x
+        }
     </style>
 </head>
 <body>
@@ -757,7 +757,7 @@
                     <span class="material-symbols-outlined">settings</span>
                     <h3>Settings</h3>
                 </a>
-                <a href="#">
+                <a href="{{ url('createP') }}">
                     <span class="material-symbols-outlined">add</span>
                     <h3>Add Product</h3>
                 </a>
@@ -787,50 +787,25 @@
 
         <main>
             <h1>Dashboard</h1>
-            <div class="date">
-                <input type="date">
-            </div>
             <div class="recent-orders">
                 <h2>Recent Orders</h2>
                 <table>
                     <thread>
                         <tr>
-                            <th>Product Name</th>
-                            <th>Product Number</th>
-                            <th>Customer ID</th>
+                            <th>Customer name</th>
+                            <th>Product name</th>
+                            <th>Tracking numer</th>
                         </tr>
                     </thread>
                     <tbody>
+                        @foreach ($orderItems as $item )
                         <tr>
-                            <td>Iphone 11</td>
-                            <td>85631</td>
-                            <td>Due</td>
+                            <td>{{ $item->order->fname.' '.$item->order->lname }}</td>
+                            <td>{{ $item->product->name }}</td>
+                            <td>{{ $item->order->tracking_no }}</td>
 
                         </tr>
-
-                        <tr>
-                            <td>Iphone 11</td>
-                            <td>85631</td>
-                            <td>Due</td>
-                        </tr>
-
-                        <tr>
-                            <td>Iphone 11</td>
-                            <td>85631</td>
-                            <td>Due</td>
-                        </tr>
-
-                        <tr>
-                            <td>Iphone 11</td>
-                            <td>85631</td>
-                            <td>Due</td>
-                        </tr>
-
-                        <tr>
-                            <td>Iphone 11</td>
-                            <td>85631</td>
-                            <td>123</td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
                 <a href="#">Show All</a>
@@ -848,40 +823,14 @@
                         </tr>
                     </thread>
                     <tbody>
+                        @foreach ($products as $product )
                     <tr>
-                        <td>Iphone 11</td>
-                        <td>85631</td>
-                        <td>Due</td>
-                        <td>85631</td>
+                        <td>{{ $product->name }}</td>
+                        <td>{{ $product->id }}</td>
+                        <td>{{ $product->quantity }}</td>
+                        <td>{{ $product->price }}</td>
                     </tr>
-
-                    <tr>
-                        <td>Iphone 11</td>
-                        <td>85631</td>
-                        <td>Due</td>
-                        <td>85631</td>
-                    </tr>
-
-                    <tr>
-                        <td>Iphone 11</td>
-                        <td>85631</td>
-                        <td>Due</td>
-                        <td>85631</td>
-                    </tr>
-
-                    <tr>
-                        <td>Iphone 11</td>
-                        <td>85631</td>
-                        <td>Due</td>
-                        <td>85631</td>
-                    </tr>
-
-                    <tr>
-                        <td>Iphone 11</td>
-                        <td>85631</td>
-                        <td>Due</td>
-                        <td>85631</td>
-                    </tr>
+                    @endforeach
                     </tbody>
                 </table>
                 <a href="#">Show All</a>
@@ -899,7 +848,7 @@
                 </div>
                 <div class="profile">
                     <div class="info">
-                        <p>He, <b>TanVuong</b></p>
+                        <p>Hello, <b>{{ Auth::user()->name }}</b></p>
                         <small class="text-muted">Admin</small>
                     </div>
                     <div class="profile-photo">
@@ -911,8 +860,10 @@
             <div class="sales-analytics">
                 <div class="item add-product">
                     <div>
+                        <a href="{{ url('createP') }}">
                         <span class="material-symbols-outlined"> add </span>
                         <h3>Add Product</h3>
+                        </a>
                     </div>
                 </div>
             </div>
