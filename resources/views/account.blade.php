@@ -5,7 +5,6 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="C:\laragon\www\Project-cuoi-ky-web\public\frontend\style.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <title>Account</title>
     <style>
@@ -587,7 +586,7 @@ button[type="submit"]:hover{
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <a href="index.html"><img src="../images/logoASMD.png" width="125px"></a>
+                <a href="/home"><img src="../images/logoASMD.png" width="125px"></a>
             </div>
             <nav>
                 <ul id="MenuItems">

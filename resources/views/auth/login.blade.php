@@ -23,17 +23,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
-<<<<<<< HEAD
-        background-image: linear-gradient(to left, black,right);
+
+        background-image: linear-gradient(to left, black>);
         padding-left:500px;
         padding-right:500px;
         margin-bottom:20px;
-=======
-        background-image: url(../images/Background_Login.jpg);
+
         background-repeat: no-repeat;
         background-color: black;
-        background-size:90%;
->>>>>>> 8f8b6ad20750ec75c1c4cd086bf6ec3bae9a6301
+        background-size:125%;
+
+    }
+
+    .logo{
+        padding-left: 45%;
     }
 
     .container{
@@ -42,11 +45,8 @@
         width: 100%;
         background: #fff;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-<<<<<<< HEAD
         margin-bottom:20px;
         height:500px;
-=======
->>>>>>> 8f8b6ad20750ec75c1c4cd086bf6ec3bae9a6301
     }
 
     .container .form{
@@ -56,11 +56,7 @@
     .container .forms{
         display: flex;
         align-items: center;
-<<<<<<< HEAD
         width: 200%;
-=======
-        width: 100%;
->>>>>>> 8f8b6ad20750ec75c1c4cd086bf6ec3bae9a6301
     }
 
     .container .form{
@@ -90,10 +86,6 @@
         position: relative;
         height: 50px;
         width: 100%;
-    }
-
-    .form login{
-
     }
     .input-field input{
         position: absolute;
@@ -174,14 +166,7 @@
         border-radius: 6px;
         background-color: #ff523b;
         cursor: pointer;
-<<<<<<< HEAD
     }
-    .from{
-        margin-bottom: 10px;
-    }
-=======
->>>>>>> 8f8b6ad20750ec75c1c4cd086bf6ec3bae9a6301
-
     </style>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -202,7 +187,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <style>
             .btn-primary {
-                width:450px;
+                width:100%;
                 height:50px;
                 font-size:27px;
                 color:white;
@@ -217,8 +202,10 @@
     <div class="container">
         <div class="forms">
             <div class="form login">
+                <div class="logo">
+                    <a href="/home"><img src="/frontend/images/logoASMD.png" width="100px" ></a>
+                </div>
                 <span class="title">Login</span>
-
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="input-field">
@@ -258,6 +245,7 @@
                         <button type="submit" class="btn btn-primary">
                             {{ __('Login Now') }}
                         </button>
+                        <br>
                         @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
