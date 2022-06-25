@@ -21,6 +21,17 @@ return new class extends Migration
             $table->string('password');
             $table->tinyInteger('gender');
             $table->integer('role_id')->default(2);
+            $table->string('fname')->nullable();
+            $table->string('lname')->nullable();
+            $table->date('DOB')->nullable();
+            $table->string('phonenum')->nullable();
+            $table->string('address')->nullable();
+            $table->string('district')->nullable();
+            $table->string('city')->nullable();
+            $table->integer('total_price')->nullable();
+            $table->tinyInteger('status')->default('0');
+            $table->string('message')->nullable();
+            $table->string('tracking_no')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

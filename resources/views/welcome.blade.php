@@ -133,7 +133,12 @@
                 <h4>{{ $product->name }}</h4>
                 <p>{{ $product->price }}VND</p>
                 <p>Kho: {{ $product->quantity }} </p>
-            </div>
+                @if($product->quantity > 0)
+                <p>In stock</p>
+            @else
+                <p>Out of stock</p> 
+            @endif
+            </div>  
             @endforeach
         </div>
     </div>
@@ -141,19 +146,21 @@
     <div class="offer">
         <div class="small-container">
             <div class="row_part2">
-                <div class="col-2">
-                    <img src="/frontend/Tanvuong/images/AppleWatchSeries7.png" class="offer-img">
-                </div>
-                <div class="col-2">
-                    <p>Exclusively Available on IphoneStore</p>
-                    <h1>Apple Watch Series 7</h1>
-                    <small>
-                        The aluminum case is lightweight and made from 100 percent recycled aerospace-grade alloy.
-                        <br>The Sport Loop is made from a soft and breathable double-layer nylon weave,
-                        with a hook-and-loop fastener for quick and easy adjustment.
-                    </small>
-                    <br><a href="" class="btn">Buy Now &#8594;</a>
-                </div>
+                @foreach ($products as $product)
+                @if($product->name == 'Xiaomy 5G')
+                    <div class="col-2">
+                        <img src="{{ asset('/frontend/images/'.$product->picture_1)}}" class="offer-img">
+                    </div>
+                    <div class="col-2">
+                        <p>Exclusively Available on IphoneStore</p>
+                        <h1>{{ $product->name }}</h1>
+                        <small>
+                        {{ $product->description }}
+                        </small>
+                        <br><a href="{{ 'product_details/'.$product->id }}" class="btn">Buy Now &#8594;</a>
+                    </div>
+                @endif
+                @endforeach
             </div>
         </div>
     </div>
