@@ -16,11 +16,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('carts', function (Blueprint $table) {
-            $table->id()->nullable();
+            $table->id();
             $table->foreignIdFor(User::class)->nullable();
             $table->foreignIdFor(Product::class)->nullable();
             $table->integer('quantity')->nullable();
-            //$table->table();
             $table->timestamps();
         });
     }

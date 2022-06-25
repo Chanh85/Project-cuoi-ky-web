@@ -140,13 +140,13 @@
         <div>
             <label for="picture1">Pictures 2 of the product:</label>
                 
-                <input class="customfile" id="upload" type="file" name="picture1" id="picture1" >
+                <input class="customfile" id="upload" type="file" name="picture2" id="picture2" >
         </div>
         <div>
             <label for="picture3">Pictures 3 of the product:</label>
             <div class="containercre">
                 <div class="button-wrap">
-                  <input class="customfile" id="upload" type="file" name="picture1" id="picture1" >
+                  <input class="customfile" id="upload" type="file" name="picture3" id="picture3" >
                 </div>
             </div>
         </div>
@@ -154,7 +154,7 @@
             <label for="picture4">Pictures 4 of the product:</label>
             <div class="containercre">
                 <div class="button-wrap"> 
-                  <input class="customfile" id="upload" type="file" name="picture1" id="picture1" >
+                  <input class="customfile" id="upload" type="file" name="picture4" id="picture4" >
                 </div>
             </div> 
         </div>

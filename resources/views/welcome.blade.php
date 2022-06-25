@@ -154,7 +154,7 @@
         <div class="small-container">
             <div class="row_part2">
                 @foreach ($products as $product)
-                @if($product->id == 2)
+                @if($product->id == 3)
                     <div class="col-2">
                         <img src="{{ asset('/frontend/images/'.$product->picture_1)}}" class="offer-img">
                     </div>
