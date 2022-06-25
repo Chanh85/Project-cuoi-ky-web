@@ -587,55 +587,96 @@ button[type="submit"]:hover{
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <a href="index.html"><img src="../images/logoASMD.png" width="125px"></a>
+                <a href="{{ url('/') }}"><img src="/frontend/images/logoASMD.png" width="125px"></a>
             </div>
             <nav>
                 <ul id="MenuItems">
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/product">Products</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/contactus">Contact</a></li>
-                    <li><a href="/account">Account</a></li>
+                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('product') }}">Products</a></li>
+                    <li><a href="{{ url('about') }}">About</a></li>
+                    <li><a href="{{ url('contactus') }}">Contact</a></li>
+                    @if(Auth::check())
+                        <li><a href="">Account</a></li>
+                        <li><a href="{{ url('my-orders') }}">My Orders</a></li>
+                        @if(Auth::user()->role_id==1)
+                        <li><a href="{{ url('/') }}">Admin Page</a></li>
+                        @endif
+                    @endif
+                   
+                    @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
                 </ul>
             </nav>
-            <a href="/frontend/cart.html"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;"></a>
+            @if(Auth::check())
+            <a href="{{ url('cart/'.Auth::user()->id) }}"><img src="/frontend/images/shopping-cart.png" width="30px" height="30px" style="cursor:pointer;padding-left:10px;padding-right:0px;" id="cart-icon"></a>
+            @endif
             <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
         </div>
     </div>
     <h1 class="title" style=" padding:10px">Profile Account</h1>
     <p style="text-align:center">Manage profile information for account security</p>
     <hr style="margin:auto; margin-bottom:20px; width:50%">
-    <form method="post">
+    <form method="post" action="{{ url('/updateInfo') }}">
+        @csrf
         <div class="content">
             <div class="form-group input-cre">
                 <label for="name">Name Account</label>
-                <input class="form-control" id="name" type="text" placeholder="Full Name">
+                <input class="form-control" id="name" name="name" type="text" placeholder="Full Name">
             </div>
             <div class="form-group input-cre">
                 <label for="email">Email address</label>
-                <input class="form-control" id="email" type="email" placeholder="Email">
+                <input class="form-control" id="email" name="email" type="email" placeholder="Email">
 
             </div>
             <div class="form-group input-cre">
                 <label for="phone">Phone Number</label>
-                <input class="form-control" id="phone" type="text" placeholder="Phone Number">
+                <input class="form-control" id="phonenum" name="phonenum" type="text" placeholder="Phone Number">
             </div>
             <div class="form-group input-cre">
                 <label for="address">Address</label>
-                <input class="form-control" id="address" type="text" placeholder="Address">
+                <input class="form-control" id="address" name="address" type="text" placeholder="Address">
             </div>
             <div class="form-group input-cre">
                 <label for="birthday">Birthday</label>
-                <input class="form-control" id="birthday" type="date">
+                <input class="form-control" id="DOB" name="DOB" type="date">
             </div>
             <div class="form-group">
                 <label>Gender</label>
                 <div>
-                    <input id="male" type="radio" name="gender">
+                    <input id="male" type="radio" name="gender" value="1">
                     <label for="male">Male</label>
-                    <input id="female" type="radio" name="gender">
+                    <input id="female" type="radio" name="gender" value="0">
                     <label for="female">Female</label>
-                    <input id="female" type="radio" name="gender">
+                    <input id="female" type="radio" name="gender" value="2">
                     <label for="female">Unknown</label>
                 </div>
             </div>

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\OrderItem;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Product;
@@ -26,10 +27,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['product.product', 'welcome','cart'], function($view){
+        View::composer(['product.product', 'welcome','cart','admin'], function($view){
             $view->with('products', Product::all());
         });
 
+        View::composer(['admin'], function($view){
+            $view->with('orderItems',OrderItem::all());
+        });
        
     }
 }

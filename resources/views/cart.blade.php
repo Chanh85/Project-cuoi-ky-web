@@ -129,7 +129,14 @@
                     <li><a href="{{ url('product') }}">Products</a></li>
                     <li><a href="{{ url('about') }}">About</a></li>
                     <li><a href="{{ url('contactus') }}">Contact</a></li>
-                    <li><a href="">Account</a></li>
+                    @if(Auth::check())
+                        <li><a href="{{ url('account') }}">Account</a></li>
+                        <li><a href="{{ url('my-orders') }}">My Orders</a></li>
+                        @if(Auth::user()->role_id==1)
+                        <li><a href="{{ url('/') }}">Admin Page</a></li>
+                        @endif
+                    @endif
+                    
                     @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
@@ -174,6 +181,7 @@
     
     <div class="cart">
         <h2 class="cart-title">Your Cart</h2>
+        @if($cartItems->count()>0)
         @php
             $total = 0;
         @endphp
@@ -212,6 +220,10 @@
         </div>
         {{-- Buy button --}}
         <a href="{{ url('checkout') }}"><button type="button" class="btn-buy" style="display: inline-block; margin-left: 40%;">Buy now</button></a>
+        @else
+        <div><p style="text-align: center">Bạn chưa có sản phẩm nào trong giỏ hàng!</p></div>
+        <a href="{{ url('product') }}"><button type="button" class="btn-buy" style="display: inline-block; margin-left: 40%;">Lựa chọn sản phẩm</button></a>
+        @endif
     </div>
     
     
