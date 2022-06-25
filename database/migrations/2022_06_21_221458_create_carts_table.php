@@ -20,7 +20,6 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->nullable();
             $table->foreignIdFor(Product::class)->nullable();
             $table->integer('quantity')->nullable();
-            //$table->table();
             $table->timestamps();
         });
     }

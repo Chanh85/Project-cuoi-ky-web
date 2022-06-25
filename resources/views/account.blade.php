@@ -696,12 +696,12 @@ button[type="submit"]:hover{
                     <h3>Download Our App</h3>
                     <p>Download App for Android and IOS mobile phone.</p>
                     <div class="app-logo">
-                        <img src="images/play-store.png">
-                        <img src="images/app-store.png">
+                        <img src="/frontend/Tanvuong/images/play-store.png">
+                        <img src="/frontend/Tanvuong/images/app-store.png">
                     </div>
                 </div>
                 <div class="footer-col-2">
-                    <a href="index.html"><img src="images/logoASM.png" width="125px"></a>
+                    <a href="{{ url('/home') }}"><img src="/frontend/images/logoASM.png" width="125px"></a>
                     <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Smartphone Accessible to the Many.</p>
                 </div>
                 <div class="footer-col-3">
